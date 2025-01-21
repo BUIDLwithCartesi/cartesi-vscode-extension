@@ -1,34 +1,54 @@
 {
-    "name": "cartesi",
-    "displayName": "Cartesi",
-    "publisher": "Cartesi",
-    "version": "0.0.1",
-    "description": "A Visual Studio Code extension for Cartesi.",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/your-username/cartesi-gateway.git"
-    },
-    "engines": {
-      "vscode": "^1.80.0"
-    },
-    "categories": ["Other"],
-    "activationEvents": ["onCommand:cartesi.runEmulator"],
-    "main": "./extension.js",
-    "contributes": {
-      "commands": [
+  "name": "cartesi",
+  "displayName": "Cartesi",
+  "description": "A VS Code extension to streamline Cartesi Rollups and Machines development.",
+  "version": "0.1.0",
+  "publisher": "",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Debuggers",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cartesi.runEmulator",
+    "onCommand:cartesi.showDocumentation",
+    "onView:cartesiView"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cartesi.runEmulator",
+        "title": "Run Cartesi Emulator"
+      },
+      {
+        "command": "cartesi.showDocumentation",
+        "title": "Show Cartesi Documentation"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
         {
-          "command": "cartesi.runEmulator",
-          "title": "Run Cartesi Emulator"
-        },
-        {
-          "command": "cartesi.showDocumentation",
-          "title": "Show Cartesi Documentation"
+          "id": "cartesi",
+          "title": "Cartesi",
+          "icon": "images/cartesi-icon.png"
         }
       ]
     },
-    "scripts": {
-      "package": "vsce package"
-    },
-    "dependencies": {}
-  }
-  
+    "views": {
+      "cartesi": [
+        {
+          "id": "cartesiView",
+          "name": "Cartesi View"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "vsce package"
+  },
+  "dependencies": {}
+}
