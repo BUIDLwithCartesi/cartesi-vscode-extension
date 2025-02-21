@@ -74,6 +74,7 @@ Alternative, install via command line:
 1, Install a cartesi dapp
 
 2, open the VS code sidebar
+
 3, Write & test Smart contract with syntax Highlighting and debugging tools.
 
 4, Deploy Dapp to a testnet/mainet in one click !
