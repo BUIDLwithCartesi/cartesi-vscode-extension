@@ -59,9 +59,9 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
 
 1, Open VS code.
 
-2, Go to Extentions Marketplace (++)
+2, Go to Extentions Marketplace
 
-3, Search for "Cartesi Extension".
+3, Search for "Cartesi".
 
 4, Click install.
 
@@ -73,8 +73,7 @@ Alternative, install via command line:
 
 1, Install a cartesi dapp
 
-2, open the VS code sidebar ( View --> Cartesi )
-
+2, open the VS code sidebar
 3, Write & test Smart contract with syntax Highlighting and debugging tools.
 
 4, Deploy Dapp to a testnet/mainet in one click !
