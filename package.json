@@ -28,7 +28,20 @@
     "commands": [{
       "command": "Cartesi.createProject",
       "title": "Create Project"
-    }]
+    }],
+    "viewsContainers": {
+      "activitybar": [{
+        "id": "cartesi",
+        "title": "Cartesi",
+        "icon": "media/icon.png"
+      }]
+    },
+    "views": {
+      "cartesi": [{
+        "id": "cartesiView",
+        "name": "Cartesi"
+      }]
+    }
   },
 
   "scripts": {
