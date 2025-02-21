@@ -1,11 +1,22 @@
 # Cartesi Extention
 
 Cartesi extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
-# 🛠 Prerequisites
+
+# 🚀 Getting Started
+
+1, Install a cartesi dapp
+
+2, open the VS code sidebar
+
+3, Write & test Smart contract with syntax Highlighting and debugging tools.
+
+4, Deploy Dapp to a testnet/mainet in one click !
+
+## 🛠 Prerequisites
 
 Before installing and using the Cartesi VS Code Extension, ensure your system meets the following requirements:
 
-# ✅ System Requirements
+## ✅ System Requirements
 
 - Operating System: Windows, macOS, or Linux
 
@@ -15,7 +26,7 @@ Before installing and using the Cartesi VS Code Extension, ensure your system me
 
 - Storage: At least 2GB of free space
 
-# 🔧 Required Dependencies
+## 🔧 Required Dependencies
 
 Ensure the following dependencies are installed before setting up the extension:
 
@@ -29,7 +40,9 @@ Install the Cartesi SDK by following the official guide
 
 Or install via command line:
 
-   code curl -sSL https://get.cartesi.io | sh
+```sh
+curl -sSL https://get.cartesi.io | sh
+```
 
 3️⃣ Docker (for Rollup deployment & containerization)
 
@@ -37,7 +50,9 @@ Install Docker from: Docker Official Site
 
 Ensure Docker daemon is running:
 
+```sh
   code docker --version
+```
 
 4️⃣ Node.js & NPM (for smart contract development)
 
@@ -45,8 +60,10 @@ Download and install from: Node.js Official Site
 
 Verify installation:
 
+```sh
   code node -v
   code npm -v
+```
 
 5️⃣ Python (for scripting & simulations)
 
@@ -54,18 +71,22 @@ Install Python (version 3.8+ recommended): Python Official Site
 
 Verify installation:
 
-  code python3 --version
+```sh
+  python3 --version
+```
 
 6️⃣ Rust & Cargo (for Rust-based Cartesi smart contracts)
 
 - Install Rust via Rustup:
 
-    code curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```sh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
 
 - Verify installation:
-`
-    rustc --version
-  `
+  ```sh
+  rustc --version
+  ```
 
 7️⃣ Git (for version control & repository management)
 
@@ -75,16 +96,31 @@ Verify installation:
 
      git --version
 
+# 📥Installation
+
+1, Open VS code.
+
+2, Go to Extentions Marketplace
+
+3, Search for "**Cartesi**".
+
+4, Click install.
+
+Alternative, install via command line:
+
+```sh
+code --install-extention cartesi
+```
 
 # 🚀 key Features & Usage Guide
 
-The Cartesi VS Code Extension provides a seamless development experience for building, testing, and deploying Cartesi Rollups directly inside Visual Studio Code. 
+The Cartesi VS Code Extension provides a seamless development experience for building, testing, and deploying Cartesi Rollups directly inside Visual Studio Code.
 
 1, 🔥 **Language and Code Support**
 **Features**
 
- - Syntax Highlighting for smart contract code.
- - Autocomplete & Intellisense for cartesi Rollups functions.
+- Syntax Highlighting for smart contract code.
+- Autocomplete & Intellisense for cartesi Rollups functions.
 - Code Snippets for common cartesi development platforms.
 
 2, 🛠 **Cartesi SDK Integration**
@@ -128,30 +164,6 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
 - Real-time logs & matrics inside VS code.
 - Performance Analytics on Rollup execution time & resource usage.
 - History of transaction & Debugging sessions for easy troubleshooting.
-
-# 📥Installation
-
-1, Open VS code.
-
-2, Go to Extentions Marketplace
-
-3, Search for "Cartesi".
-
-4, Click install.
-
-Alternative, install via command line:
-
-    code --install-extention cartesi
-
-# 🚀 Getting Started
-
-1, Install a cartesi dapp
-
-2, open the VS code sidebar
-
-3, Write & test Smart contract with syntax Highlighting and debugging tools.
-
-4, Deploy Dapp to a testnet/mainet in one click !
 
 # 🖥️ Interface Overview
 
