@@ -1,6 +1,6 @@
 # Cartesi Extention
 
-Cartesi extention provides seamless support for compiling, debuging and testing Cartesi smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
+Cartesi extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
 
 # 🚀 key Features & Usage Guide
 
