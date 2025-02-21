@@ -8,6 +8,7 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
 
 1, 🔥 **Language and Code Support**
 **Features**
+
     ✅  Syntax Highlighting for smart contract code.
     ✅  Autocomplete & Intellisense for cartesi Rollups functions.
     ✅  Code Snippets for common cartesi development platforms.
@@ -36,7 +37,7 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
 5,🎨 **User Experience Enhancements**
 **Features**
 
-    ✅ custom sidebar for stractured development (Create Machine, Deploy, Simulate).
+    ✅ custom sidebar for stractured development (Create dapp, Build, Deploy and Simulate).
     ✅ inline Documentation & Tooling for quick guidance.
     ✅ Status indicators to monitor Rollup excution health & Logs.
 
