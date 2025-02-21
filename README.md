@@ -1,60 +1,141 @@
 # Cartesi Extention
 
-Cartesi extention provides seamless support for compiling, debuging and testing Cartesi smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
+Cartesi extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
+# 🛠 Prerequisites
 
-# key Features
+Before installing and using the Cartesi VS Code Extension, ensure your system meets the following requirements:
 
-This Extention will enhance cartesi Rollup Dapp development by integrating syntax support, debuging tools, development automation, and real-time execution logs in to the VS-Code.
+# ✅ System Requirements
 
-1, **Language and Code Support**
+- Operating System: Windows, macOS, or Linux
 
-- Syntax Highlighting for smart contract code.
-- Autocomplete & Intellisense for cartesi Rollups functions.
+- VS Code Version: v1.70 or later
+
+- RAM: Minimum 4GB (Recommended: 8GB+ for smooth development)
+
+- Storage: At least 2GB of free space
+
+# 🔧 Required Dependencies
+
+Ensure the following dependencies are installed before setting up the extension:
+
+1️⃣ Visual Studio Code
+
+Download and install VS Code from VS Code Download
+
+2️⃣ Cartesi SDK
+
+Install the Cartesi SDK by following the official guide
+
+Or install via command line:
+
+   code curl -sSL https://get.cartesi.io | sh
+
+3️⃣ Docker (for Rollup deployment & containerization)
+
+Install Docker from: Docker Official Site
+
+Ensure Docker daemon is running:
+
+  code docker --version
+
+4️⃣ Node.js & NPM (for smart contract development)
+
+Download and install from: Node.js Official Site
+
+Verify installation:
+
+  code node -v
+  code npm -v
+
+5️⃣ Python (for scripting & simulations)
+
+Install Python (version 3.8+ recommended): Python Official Site
+
+Verify installation:
+
+  code python3 --version
+
+6️⃣ Rust & Cargo (for Rust-based Cartesi smart contracts)
+
+- Install Rust via Rustup:
+
+    code curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+- Verify installation:
+`
+    rustc --version
+  `
+
+7️⃣ Git (for version control & repository management)
+
+Install Git from: Git Official Site
+
+Verify installation:
+
+     git --version
+
+
+# 🚀 key Features & Usage Guide
+
+The Cartesi VS Code Extension provides a seamless development experience for building, testing, and deploying Cartesi Rollups directly inside Visual Studio Code. 
+
+1, 🔥 **Language and Code Support**
+**Features**
+
+ - Syntax Highlighting for smart contract code.
+ - Autocomplete & Intellisense for cartesi Rollups functions.
 - Code Snippets for common cartesi development platforms.
 
-2, **Cartesi SDK Integration**
+2, 🛠 **Cartesi SDK Integration**
+**Features**
 
 - Built-in Terminal Shortcuts for runing cartesi-machine, cartesi-node, etc.
 - SDK Command Execution directly inside VS code.
 - Auto-setup of cartesi Environment for fist-time users.
 
-3, **Deployment Tools**
+3, 🚀 **Deployment Tools**
+**Features**
 
 - one-click Deployment to Testnet/Mainnets using Docker-based workflows.
 - Automated compilation & Containerization of cartesi Rollups.
 - Customizable Development Settings (gas, fees, network selection).
 
-4, **Debugging & Simulation**
+4,🐞 **Debugging & Simulation**
+**Features**
 
 - Trasaction Simulator for testing Rollup interactions.
 - Live Log Viewer for step-by-step contract execution monitoring.
 - Breakpoints & Error Logging tailored for Cartesi architecture.
 
-5, **User Experience Enhancements**
+5,🎨 **User Experience Enhancements**
+**Features**
 
-- custom sidebar for stractured development (Create Machine, Deploy, Simulate).
+- custom sidebar for stractured development (Create dapp, Build, Deploy and Simulate).
 - inline Documentation & Tooling for quick guidance.
 - Status indicators to monitor Rollup excution health & Logs.
 
-6, **Testing Framework**
+6, ✅ **Testing Framework**
+**Features**
 
 - built-in support for Mocha & jest for smart contract testing.
 - Unit Testing Integration with in VS code.
 - Automation Test Excution for Dapp validation.
 
-7, **live Excution preview**
+7, 🔴 **live Excution preview**
+**Features**
 
 - Real-time logs & matrics inside VS code.
 - Performance Analytics on Rollup execution time & resource usage.
 - History of transaction & Debugging sessions for easy troubleshooting.
 
-# Installation
+# 📥Installation
 
 1, Open VS code.
 
-2, Go to Extentions Marketplace (++)
+2, Go to Extentions Marketplace
 
-3, Search for "Cartesi Extension".
+3, Search for "Cartesi".
 
 4, Click install.
 
@@ -62,21 +143,21 @@ Alternative, install via command line:
 
     code --install-extention cartesi
 
-# Getting Started
+# 🚀 Getting Started
 
 1, Install a cartesi dapp
 
-2, open the VS code sidebar ( View --> Cartesi )
+2, open the VS code sidebar
 
 3, Write & test Smart contract with syntax Highlighting and debugging tools.
 
 4, Deploy Dapp to a testnet/mainet in one click !
 
-# Interface Overview
+# 🖥️ Interface Overview
 
 The Cartesi VS code Extention provide a user-friendly interface to streamline cartesi Rollup dapp development.
 
-1, **Working Area - Code Editor**
+1️⃣ **Working Area - Code Editor**
 
 The main area in the vs code Editor, Where you can write smart contract and dApp configerations.
 the extention enhance the experience with:
@@ -111,7 +192,7 @@ Type **cartesi-machine** and select the snippet to insert:
 
 - Snippets available for stateful execution, transaction handling and Rollup verification.
 
-2, **Sidebar: Navigation**
+2️⃣ **Sidebar: Navigation**
 
 Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
 
@@ -124,13 +205,13 @@ Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar 
   - Simulate Transactions
   - View Execution Logs
 
-3, **Integrated development Tools**
+3️⃣ **Integrated development Tools**
 
 - Terminal with SDK Commands:
 
   The Extention integrate Cartesi SDK tools into the VS Code terminal:
 
-  - Run `cartesi-machine run` to excute smart contracts. - Compile Rollups with `Cartesi-rollups build.` - Deploy with `cartesi-rollups deploy --network testnet.`
+  - Run `run` to excute smart contracts. - Compile Rollups with `build.` - Deploy with `deploy --network testnet.`
   - Debugging & Error Logging
 
     - Breakpoints Pause excution at key points.
