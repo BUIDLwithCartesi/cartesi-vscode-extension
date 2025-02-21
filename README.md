@@ -1,6 +1,80 @@
 # Cartesi Extention
 
 Cartesi extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
+# 🛠 Prerequisites
+
+Before installing and using the Cartesi VS Code Extension, ensure your system meets the following requirements:
+
+# ✅ System Requirements
+
+- Operating System: Windows, macOS, or Linux
+
+- VS Code Version: v1.70 or later
+
+- RAM: Minimum 4GB (Recommended: 8GB+ for smooth development)
+
+- Storage: At least 2GB of free space
+
+# 🔧 Required Dependencies
+
+Ensure the following dependencies are installed before setting up the extension:
+
+1️⃣ Visual Studio Code
+
+Download and install VS Code from VS Code Download
+
+2️⃣ Cartesi SDK
+
+Install the Cartesi SDK by following the official guide
+
+Or install via command line:
+
+   code curl -sSL https://get.cartesi.io | sh
+
+3️⃣ Docker (for Rollup deployment & containerization)
+
+Install Docker from: Docker Official Site
+
+Ensure Docker daemon is running:
+
+  code docker --version
+
+4️⃣ Node.js & NPM (for smart contract development)
+
+Download and install from: Node.js Official Site
+
+Verify installation:
+
+  code node -v
+  code npm -v
+
+5️⃣ Python (for scripting & simulations)
+
+Install Python (version 3.8+ recommended): Python Official Site
+
+Verify installation:
+
+  code python3 --version
+
+6️⃣ Rust & Cargo (for Rust-based Cartesi smart contracts)
+
+- Install Rust via Rustup:
+
+    code curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+- Verify installation:
+`
+    rustc --version
+  `
+
+7️⃣ Git (for version control & repository management)
+
+Install Git from: Git Official Site
+
+Verify installation:
+
+     git --version
+
 
 # 🚀 key Features & Usage Guide
 
