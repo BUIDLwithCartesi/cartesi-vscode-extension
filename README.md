@@ -8,7 +8,6 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
 
 1, 🔥 **Language and Code Support**
 **Features**
-
     ✅  Syntax Highlighting for smart contract code.
     ✅  Autocomplete & Intellisense for cartesi Rollups functions.
     ✅  Code Snippets for common cartesi development platforms.
@@ -55,7 +54,7 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
     ✅ Performance Analytics on Rollup execution time & resource usage.
     ✅ History of transaction & Debugging sessions for easy troubleshooting.
 
-# Installation
+# 📥Installation
 
 1, Open VS code.
 
@@ -69,7 +68,7 @@ Alternative, install via command line:
 
     code --install-extention cartesi
 
-# Getting Started
+# 🚀 Getting Started
 
 1, Install a cartesi dapp
 
@@ -79,11 +78,11 @@ Alternative, install via command line:
 
 4, Deploy Dapp to a testnet/mainet in one click !
 
-# Interface Overview
+# 🖥️ Interface Overview
 
 The Cartesi VS code Extention provide a user-friendly interface to streamline cartesi Rollup dapp development.
 
-1, **Working Area - Code Editor**
+1️⃣ **Working Area - Code Editor**
 
 The main area in the vs code Editor, Where you can write smart contract and dApp configerations.
 the extention enhance the experience with:
@@ -118,7 +117,7 @@ Type **cartesi-machine** and select the snippet to insert:
 
 - Snippets available for stateful execution, transaction handling and Rollup verification.
 
-2, **Sidebar: Navigation**
+2️⃣ **Sidebar: Navigation**
 
 Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
 
@@ -131,7 +130,7 @@ Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar 
   - Simulate Transactions
   - View Execution Logs
 
-3, **Integrated development Tools**
+3️⃣ **Integrated development Tools**
 
 - Terminal with SDK Commands:
 
