@@ -9,51 +9,51 @@ The Cartesi VS Code Extension provides a seamless development experience for bui
 1, 🔥 **Language and Code Support**
 **Features**
 
-    ✅  Syntax Highlighting for smart contract code.
-    ✅  Autocomplete & Intellisense for cartesi Rollups functions.
-    ✅  Code Snippets for common cartesi development platforms.
+ - Syntax Highlighting for smart contract code.
+ - Autocomplete & Intellisense for cartesi Rollups functions.
+- Code Snippets for common cartesi development platforms.
 
 2, 🛠 **Cartesi SDK Integration**
 **Features**
 
-    ✅ Built-in Terminal Shortcuts for runing cartesi-machine, cartesi-node, etc.
-    ✅ SDK Command Execution directly inside VS code.
-    ✅ Auto-setup of cartesi Environment for fist-time users.
+- Built-in Terminal Shortcuts for runing cartesi-machine, cartesi-node, etc.
+- SDK Command Execution directly inside VS code.
+- Auto-setup of cartesi Environment for fist-time users.
 
 3, 🚀 **Deployment Tools**
 **Features**
 
-    ✅ one-click Deployment to Testnet/Mainnets using Docker-based workflows.
-    ✅ Automated compilation & Containerization of cartesi Rollups.
-    ✅ Customizable Development Settings (gas, fees, network selection).
+- one-click Deployment to Testnet/Mainnets using Docker-based workflows.
+- Automated compilation & Containerization of cartesi Rollups.
+- Customizable Development Settings (gas, fees, network selection).
 
 4,🐞 **Debugging & Simulation**
 **Features**
 
-    ✅ Trasaction Simulator for testing Rollup interactions.
-    ✅ Live Log Viewer for step-by-step contract execution monitoring.
-    ✅ Breakpoints & Error Logging tailored for Cartesi architecture.
+- Trasaction Simulator for testing Rollup interactions.
+- Live Log Viewer for step-by-step contract execution monitoring.
+- Breakpoints & Error Logging tailored for Cartesi architecture.
 
 5,🎨 **User Experience Enhancements**
 **Features**
 
-    ✅ custom sidebar for stractured development (Create dapp, Build, Deploy and Simulate).
-    ✅ inline Documentation & Tooling for quick guidance.
-    ✅ Status indicators to monitor Rollup excution health & Logs.
+- custom sidebar for stractured development (Create dapp, Build, Deploy and Simulate).
+- inline Documentation & Tooling for quick guidance.
+- Status indicators to monitor Rollup excution health & Logs.
 
 6, ✅ **Testing Framework**
 **Features**
 
-    ✅ built-in support for Mocha & jest for smart contract testing.
-    ✅ Unit Testing Integration with in VS code.
-    ✅ Automation Test Excution for Dapp validation.
+- built-in support for Mocha & jest for smart contract testing.
+- Unit Testing Integration with in VS code.
+- Automation Test Excution for Dapp validation.
 
 7, 🔴 **live Excution preview**
 **Features**
 
-    ✅ Real-time logs & matrics inside VS code.
-    ✅ Performance Analytics on Rollup execution time & resource usage.
-    ✅ History of transaction & Debugging sessions for easy troubleshooting.
+- Real-time logs & matrics inside VS code.
+- Performance Analytics on Rollup execution time & resource usage.
+- History of transaction & Debugging sessions for easy troubleshooting.
 
 # 📥Installation
 
