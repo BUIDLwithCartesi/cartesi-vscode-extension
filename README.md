@@ -136,7 +136,7 @@ Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar 
 
   The Extention integrate Cartesi SDK tools into the VS Code terminal:
 
-  - Run `cartesi-machine run` to excute smart contracts. - Compile Rollups with `Cartesi-rollups build.` - Deploy with `cartesi-rollups deploy --network testnet.`
+  - Run `run` to excute smart contracts. - Compile Rollups with `build.` - Deploy with `deploy --network testnet.`
   - Debugging & Error Logging
 
     - Breakpoints Pause excution at key points.
