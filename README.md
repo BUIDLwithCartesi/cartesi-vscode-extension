@@ -204,7 +204,7 @@ Type **cartesi-machine** and select the snippet to insert:
 
 - Snippets available for stateful execution, transaction handling and Rollup verification.
 
-2️⃣ **Sidebar: Navigation**
+2️⃣ **Sidebar - Navigation**
 
 Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
 
@@ -217,7 +217,7 @@ Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar 
   - Simulate Transactions
   - View Execution Logs
 
-3️⃣ **Integrated development Tools**
+3️⃣ **Integrated development Tools - Terminal**
 
 - Terminal with SDK Commands:
 
