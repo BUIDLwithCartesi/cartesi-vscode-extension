@@ -4,17 +4,17 @@ Cartesi extention provides seamless support for compiling, debuging and testing 
 
 # 🚀 Getting Started
 
-1, Install a cartesi dapp
+1, Install a cartesi extention
 
 2, open the VS code sidebar
 
 3, Write & test Smart contract with syntax Highlighting and debugging tools.
 
-4, Deploy Dapp to a testnet/mainet in one click !
+4, Compile, Build and Deploy Dapp to a testnet/mainet in one click !
 
 ## 🛠 Prerequisites
 
-Before installing and using the Cartesi VS Code Extension, ensure your system meets the following requirements:
+Before installing and using the Cartesi visual stideo Code Extension, ensure your system meets the following requirements:
 
 ## ✅ System Requirements
 
