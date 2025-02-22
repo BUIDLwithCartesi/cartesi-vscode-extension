@@ -1,13 +1,13 @@
 {
-  "name": "cartesi-extension",
-  "displayName": "Cartesi",
+  "name": "Cartana",
+  "displayName": "Cartana",
   "description": "The Cartesi VS Code Extension streamlines Cartesi Rollup development by integrating essential tools directly into Visual Studio Code.",
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
     "vscode": "^1.97.0"
   },
-  "publisher": "cartesi",
+  "publisher": "Cartana Labs",
   "homepage": "https://cartesi.io",
   "repository": {
     "type": "git",
