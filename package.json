@@ -1,7 +1,7 @@
 {
   "name": "Cartana",
   "displayName": "Cartana",
-  "description": "The Cartesi VS Code Extension streamlines Cartesi Rollup development by integrating essential tools directly into Visual Studio Code.",
+  "description": "The Cartana Extension streamlines Cartesi Rollup development by integrating essential tools directly into Visual Studio Code.",
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
