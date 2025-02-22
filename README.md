@@ -7,11 +7,11 @@
                                    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═╝    
                                                  visual studio Code Extension
 
-Cartesi visual studio extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
+Cartana visual studio extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
 
 # 🚀 Getting Started
 
-  1, Install a cartesi extention
+  1, Install a Cartana extention
   
   2, open the VS code sidebar
   
@@ -21,7 +21,7 @@ Cartesi visual studio extention provides seamless support for compiling, debugin
 
 ## 🛠 Prerequisites
 
-Before installing and using the Cartesi visual stideo Code Extension, ensure your system meets the following requirements:
+Before installing and using the Cartana visual stideo Code Extension, ensure your system meets the following requirements:
 
 ## ✅ System Requirements
 
@@ -109,7 +109,7 @@ Verify installation:
 
 2, Go to Extentions Marketplace
 
-3, Search for "**Cartesi**".
+3, Search for "**Cartana**".
 
 4, Click install.
 
@@ -121,7 +121,7 @@ code --install-extention cartesi
 
 # 🚀 key Features & Usage Guide
 
-The Cartesi VS Code Extension provides a seamless development experience for building, testing, and deploying Cartesi Rollups directly inside Visual Studio Code.
+The Cartana Visual Studio Code Extension provides a seamless development experience for building, testing, and deploying Cartesi Rollups directly inside Visual Studio Code.
 
 1, 🔥 **Language and Code Support**
 **Features**
