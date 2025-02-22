@@ -195,18 +195,8 @@ the extention enhance the experience with:
 
 - Code Snippets for Faster Development
 
-Use predefined Cartesi snippets to quickly insert common patterns
-
-Example Snippet - Initializing a cartesi Machine.
-
-Type **cartesi-machine** and select the snippet to insert:
-
-    cartesi_machine = cartesimachine {
-        memory_size = 1024 + 1024 + 512, --512MB RAM
-        bootargs = "console=tty50 root=/dev/vda1",
-        rom = "/opt/cartesi/rom.bin"
-    }
-
+- Use predefined Cartesi snippets to quickly insert common patterns
+    
 - Automatically fills in default Cartesi Machine Parameters.
 
 - Snippets available for stateful execution, transaction handling and Rollup verification.
