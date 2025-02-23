@@ -7,8 +7,8 @@
   "engines": {
     "vscode": "^1.97.0"
   },
-  "publisher": "Cartana Labs",
-  "homepage": "https://cartesi.io",
+  "publisher": "CartanaLabs",
+  "homepage": "#",
   "repository": {
     "type": "git",
     "url": ""
