@@ -21,11 +21,11 @@ Cartana provides seamless support for compiling, debuging and testing smart cont
 
 4, Compile, Build and Deploy Dapp to a testnet/mainet in one click !
 
-## 🛠 Prerequisites
+### 🛠 Prerequisites
 
 Before installing and using the Cartana visual stideo Code Extension, ensure your system meets the following requirements:
 
-## ✅ System Requirements
+### ✅ System Requirements
 
 - Operating System: Windows, macOS, or Linux
 
@@ -35,7 +35,7 @@ Before installing and using the Cartana visual stideo Code Extension, ensure you
 
 - Storage: At least 2GB of free space
 
-## 🔧 Required Dependencies
+### 🔧 Required Dependencies
 
 Ensure the following dependencies are installed before setting up the extension:
 
@@ -121,7 +121,7 @@ Alternative, install via command line:
 code --install-extention cartana
 ```
 
-# 🚀 key Features & Usage Guide
+## 🚀 key Features & Usage Guide
 
 The Cartana Visual Studio Code Extension provides a seamless development experience for building, testing, and deploying Cartesi Rollups directly inside Visual Studio Code.
 
