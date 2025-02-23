@@ -11,6 +11,22 @@
 
 Cartana provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
 
+## 📑 Navigation Guide
+
+[🚀 Getting Started](#-getting-started)
+
+[🛠 Prerequisites](#-prerequisites)
+
+[✅ System Requirements](#-system-requirements)
+
+[🔧 Required Dependencies](#-required-dependencies)
+
+[📥 Installation](#installation)
+
+[🚀 Key Features & Usage Guide](#-key-features--usage-guide)
+
+[🖥️ Interface Overview](#️-interface-overview)
+
 ## 🚀 Getting Started
 
 1, Install a Cartana extention

@@ -26,20 +26,20 @@
 
   "contributes": {
     "commands": [{
-      "command": "Cartesi.createProject",
+      "command": "Cartana.createProject",
       "title": "Create Project"
     }],
     "viewsContainers": {
       "activitybar": [{
-        "id": "cartesi",
-        "title": "Cartesi",
+        "id": "Cartana",
+        "title": "Cartana",
         "icon": "media/icon.png"
       }]
     },
     "views": {
       "cartesi": [{
-        "id": "cartesiView",
-        "name": "Cartesi"
+        "id": "CartanaView",
+        "name": "Cartana"
       }]
     }
   },
