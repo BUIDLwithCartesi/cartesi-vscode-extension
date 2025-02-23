@@ -1,23 +1,25 @@
+```
+                        █████╗   █████╗   ██████╗   ████████╗   █████╗   ███╗   ██╗   █████╗
+                      ██╔════╝  ██╔══██╗  ██╔══██╗  ╚══██╔══╝  ██╔══██╗  ████╗  ██║  ██╔══██╗
+                      ██║       ███████║  ██████╔╝     ██║     ███████║  ██╔██╗ ██║  ███████║
+                      ██║       ██╔══██║  ██╔══██╗     ██║     ██╔══██║  ██║╚██╗██║  ██╔══██║
+                      ╚██████╗  ██║  ██║  ██║  ██║     ██║     ██║  ██║  ██║ ╚████║  ██║  ██║
+                       ╚═════╝  ╚═╝  ╚═╝  ╚═╝  ╚═╝     ╚═╝     ╚═╝  ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝
 
-                                   ██████╗  █████╗ ██████╗ ████████╗███████╗███████╗██╗              
-                                  ██╔════╝ ██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔════╝██║            
-                                  ██║      ███████║██████╔╝   ██║   █████╗  ███████╗██║                
-                                  ██║      ██╔══██║██╔══██╗   ██║   ██╔══╝  ╚════██║██║                  
-                                  ╚██████╔╝██║  ██║██║  ██║   ██║   ███████╗███████║██║                   
-                                   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═╝    
-                                                 visual studio Code Extension
+                                            visual studio Code Extension
+```
 
 Cartana visual studio extention provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
 
 # 🚀 Getting Started
 
-  1, Install a Cartana extention
-  
-  2, open the VS code sidebar
-  
-  3, Write & test Smart contract with syntax Highlighting and debugging tools.
-  
-  4, Compile, Build and Deploy Dapp to a testnet/mainet in one click !
+1, Install a Cartana extention
+
+2, open the VS code sidebar
+
+3, Write & test Smart contract with syntax Highlighting and debugging tools.
+
+4, Compile, Build and Deploy Dapp to a testnet/mainet in one click !
 
 ## 🛠 Prerequisites
 
@@ -196,7 +198,6 @@ the extention enhance the experience with:
 - Code Snippets for Faster Development
 
 - Use predefined Cartesi snippets to quickly insert common patterns
-    
 - Automatically fills in default Cartesi Machine Parameters.
 
 - Snippets available for stateful execution, transaction handling and Rollup verification.
