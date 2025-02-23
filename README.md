@@ -118,7 +118,7 @@ Verify installation:
 Alternative, install via command line:
 
 ```sh
-code --install-extention cartesi
+code --install-extention cartana
 ```
 
 # 🚀 key Features & Usage Guide
@@ -204,13 +204,13 @@ the extention enhance the experience with:
 
 2️⃣ **Sidebar - Navigation**
 
-Acsses the cartesi Sidebar from the Activity Bar (View -> Cartesi). The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
+Acsses the cartesi Sidebar from the Activity Bar. The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
 
 - Project Explorer - View and manage smart contract and script.
 
 - Quick Actions
 - Buttons for common tasks:
-  - Intialize a cartesi dApp
+  - Run a cartesi dApp
   - Build & Deploy Smart Contract
   - Simulate Transactions
   - View Execution Logs
