@@ -75,13 +75,13 @@ For detailed documentation, please visit our [official documentation](https://do
 ### 🔗 Related Content
 
 - [Cartana Official Website](https://cartana.io)
-- [Cartana Repository](https://github.com/cartanalabs)
+- [Cartana Repository](https://github.com/cartana-Studio)
 - [Cartana Community Forum](https://forum.cartana.io)
 - [Cartana Discord Server](https://discord.com/cartana)
 
 ---
 
-<p align="center">Made with ❤️ by CartanaLabs</p>
+<p align="center">Made with ❤️ by Cartana Studio</p>
 
 ## 🚀 Getting Started
 
