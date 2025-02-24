@@ -24,7 +24,23 @@
   ],
   "icon": "media/icon.png",
 
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:cartana.Create",
+    "onCommand:cartana.build",
+    "onCommand:cartana.run",
+    "onCommand:cartana.test",
+    "onCommand:cartana.deploy",
+    "onCommand:cartana.addressBook",
+    "onCommand:cartana.clean",
+    "onCommand:cartana.hash",
+    "onCommand:cartana.verify",
+    "onCommand:cartana.debug",
+    "onCommand:cartana.settings",
+    "onCommand:cartana.documentation",
+    "onCommand:cartana.about",
+    "onCommand:cartana.Help",
+    "onView:cartanaView"
+  ],
   "main": "./extension.js",
 
   "contributes": {
@@ -80,6 +96,10 @@
     {
       "command": "Cartana.about",
       "title": "About"
+    },
+    {
+      "command": "Cartana.Help",
+      "title": "Help"
     }
   ],
     "viewsContainers": {
@@ -90,7 +110,7 @@
       }]
     },
     "views": {
-      "cartesi": [{
+      "cartana": [{
         "id": "CartanaView",
         "name": "Cartana"
       }]
