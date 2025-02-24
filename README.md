@@ -1,16 +1,3 @@
-```sh
-
-        █████╗   █████╗   ██████╗   ████████╗   █████╗   ███╗   ██╗   █████╗
-      ██╔════╝  ██╔══██╗  ██╔══██╗  ╚══██╔══╝  ██╔══██╗  ████╗  ██║  ██╔══██╗
-      ██║       ███████║  ██████╔╝     ██║     ███████║  ██╔██╗ ██║  ███████║
-      ██║       ██╔══██║  ██╔══██╗     ██║     ██╔══██║  ██║╚██╗██║  ██╔══██║
-      ╚██████╗  ██║  ██║  ██║  ██║     ██║     ██║  ██║  ██║ ╚████║  ██║  ██║
-       ╚═════╝  ╚═╝  ╚═╝  ╚═╝  ╚═╝     ╚═╝     ╚═╝  ╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝
-
-                          visual studio Code Extension
-
-```
-
 Cartana provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
 
 [🚀 Getting Started](#-getting-started)
@@ -79,7 +66,7 @@ If you have any questions, feel free to reach out to us at [support@cartana.io](
 
 ### 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Cartana-Labs/Cartana-vs-code/blob/674b87cdd1cb92181cd7b5b613f78e9bb1aadca8/LICENSE.md) file for details.
 
 ### 📚 Documentation
 
