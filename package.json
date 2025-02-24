@@ -7,11 +7,11 @@
   "engines": {
     "vscode": " ^1.58.0"
   },
-  "publisher": "CartanaLabs",
+  "publisher": "Cartana Studio",
   "homepage": "#",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Cartana-Labs/Cartana-vs-code"
+    "url": "hhttps://github.com/Cartana-Studio/Cartana-vs-code"
   },
   "categories": [
     "Programming Languages",

@@ -66,7 +66,7 @@ If you have any questions, feel free to reach out to us at [support@cartana.io](
 
 ### 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Cartana-Labs/Cartana-vs-code/blob/674b87cdd1cb92181cd7b5b613f78e9bb1aadca8/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Cartana-Studio/Cartana-vs-code/blob/674b87cdd1cb92181cd7b5b613f78e9bb1aadca8/LICENSE.md) file for details.
 
 ### 📚 Documentation
 
@@ -197,7 +197,7 @@ code --install-extention cartana
 
 # 🖥️ Interface Overview
 
-The Cartesi VS code Extention provide a user-friendly interface to streamline cartesi Rollup dapp development.
+The cartana visual studio code Extention provide a user-friendly interface to streamline cartesi Rollup dapp development.
 
 1️⃣ **Working Area - Code Editor**
 
@@ -225,7 +225,7 @@ the extention enhance the experience with:
 
 2️⃣ **Sidebar - Navigation**
 
-Acsses the cartesi Sidebar from the Activity Bar. The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
+Acsses the cartana Sidebar from the Activity Bar. The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
 
 - Project Explorer - View and manage smart contract and script.
 
