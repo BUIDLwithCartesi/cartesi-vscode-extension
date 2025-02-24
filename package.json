@@ -1,11 +1,11 @@
 {
-  "name": "Cartana",
+  "name": "cartana",
   "displayName": "Cartana",
-  "description": "The Cartana Extension streamlines Cartesi Rollup development by integrating essential tools directly into Visual Studio Code.",
-  "version": "0.0.1",
+  "description": "Cartana streamlines Cartesi Rollup development by integrating essential tools directly into Visual Studio Code.",
+  "version": "0.0.0",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "*"
   },
   "publisher": "CartanaLabs",
   "homepage": "#",
@@ -14,9 +14,12 @@
     "url": ""
   },
   "categories": [
-    "Education",
     "Programming Languages",
-    "Visualization",
+    "Debuggers",
+    "Formatters",
+    "Linters",
+    "Snippets",
+    "Testing",
     "Other"
   ],
   "icon": "media/icon.png",
@@ -25,10 +28,60 @@
   "main": "./extension.js",
 
   "contributes": {
-    "commands": [{
-      "command": "Cartana.createProject",
+    "commands": [
+      {
+      "command": "Cartana.Create",
       "title": "Create Project"
-    }],
+    },
+    {
+      "command": "Cartana.build",
+      "title": "Build"
+    },
+    {
+      "command": "Cartana.run",
+      "title": "Run"
+    },
+    {
+      "command": "Cartana.test",
+      "title": "Test"
+    },
+    {
+      "command": "Cartana.deploy",
+      "title": "Deploy"
+    },
+    {
+      "command": "Cartana.addressBook",
+      "title": "Address Book"
+    },
+    {
+      "command": "Cartana.clean",
+      "title": "Clean"
+    },
+    {
+      "command": "Cartana.hash",
+      "title": "Hash"
+    },
+    {
+      "command": "Cartana.verify",
+      "title": "Verify"
+    },
+    {
+      "command": "Cartana.debug",
+      "title": "Debug"
+    },
+    {
+      "command": "Cartana.settings",
+      "title": "Settings"
+    },
+    {
+      "command": "Cartana.documentation",
+      "title": "Documentation"
+    },
+    {
+      "command": "Cartana.about",
+      "title": "About"
+    }
+  ],
     "viewsContainers": {
       "activitybar": [{
         "id": "Cartana",
