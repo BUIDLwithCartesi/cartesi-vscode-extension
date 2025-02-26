@@ -1,3 +1,5 @@
+# Cartana for Cartesi Rollup Dapp Development
+
 Cartana provides seamless support for compiling, debuging and testing smart contract diretly with in VS code. It enhances developer experiance and productivity, especially when using the github codespaces, by enabling unifide managment of front-end and back-end development with in the same repository.
 
 [🚀 Getting Started](#-getting-started)
@@ -12,51 +14,55 @@ Cartana provides seamless support for compiling, debuging and testing smart cont
 
 [🖥️ Interface Overview](#️-interface-overview)
 
-Cartana is designed to streamline the development of Cartesi Rollup applications. By integrating essential tools directly into the VS Code environment, Cartana simplifies the process of creating, building, running, and deploying Cartesi applications. Whether you are working with generic inputs, Ether, ERC20, ERC721, or dApp addresses, Cartana provides a seamless workflow to manage your Cartesi projects. With features like local node execution, build artifact management, and system requirement verification, Cartana ensures a smooth and efficient development experience.
+**Cartana** is designed to streamline the development of Cartesi Rollup applications. By integrating essential tools directly into the VS Code environment, Cartana simplifies the process of **creating**, **building**, **running**, and **deploying** Cartesi applications.
 
-Cartana offers a comprehensive suite of features designed to enhance the development experience for Cartesi Rollup applications. Below are some of the key functionalities that make Cartana an essential tool for developers:
+Whether you are working with **generic inputs**, **Ether**, **ERC20**, **ERC721**, or **dApp addresses**, Cartana provides a seamless workflow to manage your Cartesi projects. With features like local node execution, build artifact management, and system requirement verification, Cartana ensures a smooth and efficient development experience.
+
+Cartana offers a comprehensive suite of features designed to enhance the development experience for Cartesi Rollup applications.
+
+Below are some of the key functionalities that make Cartana an essential tool for developers:
 
 🔥 **Language and Code Support**
 
-- Syntax Highlighting for smart contract code.
-- Autocomplete & Intellisense for cartesi Rollups functions.
-- Code Snippets for common cartesi development platforms.
+1. Syntax Highlighting for smart contract code.
+2. Autocomplete & Intellisense for Cartesi Rollups functions.
+3. Code Snippets for common Cartesi development patterns.
 
 🛠 **Cartesi SDK Integration**
 
-- Built-in Terminal Shortcuts for runing cartesi-machine, cartesi-node, etc.
-- SDK Command Execution directly inside VS code.
-- Auto-setup of cartesi Environment for fist-time users.
+1. Built-in Terminal Shortcuts for running cartesi-machine, cartesi-node, etc.
+2. SDK Command Execution directly inside VS Code.
+3. Auto-setup of Cartesi Environment for first-time users.
 
 🚀 **Deployment Tools**
 
-- one-click Deployment to Testnet/Mainnets using Docker-based workflows.
-- Automated compilation & Containerization of cartesi Rollups.
-- Customizable Development Settings (gas, fees, network selection).
+1. One-click Deployment to Testnet/Mainnets using Docker-based workflows.
+2. Automated compilation & Containerization of Cartesi Rollups.
+3. Customizable Development Settings (gas, fees, network selection).
 
 🐞 **Debugging & Simulation**
 
-- Trasaction Simulator for testing Rollup interactions.
-- Live Log Viewer for step-by-step contract execution monitoring.
-- Breakpoints & Error Logging tailored for Cartesi architecture.
+1. Transaction Simulator for testing Rollup interactions.
+2. Live Log Viewer for step-by-step contract execution monitoring.
+3. Breakpoints & Error Logging tailored for Cartesi architecture.
 
 🎨 **User Experience Enhancements**
 
-- custom sidebar for stractured development (Create dapp, Build, Deploy and Simulate).
-- inline Documentation & Tooling for quick guidance.
-- Status indicators to monitor Rollup excution health & Logs.
+1. Custom sidebar for structured development (Create dapp, Build, Deploy and Simulate).
+2. Inline Documentation & Tooling for quick guidance.
+3. Status indicators to monitor Rollup execution health & Logs.
 
 ✅ **Testing Framework**
 
-- built-in support for Mocha & jest for smart contract testing.
-- Unit Testing Integration with in VS code.
-- Automation Test Excution for Dapp validation.
+1. Built-in support for Mocha & Jest for smart contract testing.
+2. Unit Testing Integration within VS Code.
+3. Automated Test Execution for dApp validation.
 
 🔴 **live Excution preview**
 
-- Real-time logs & matrics inside VS code.
-- Performance Analytics on Rollup execution time & resource usage.
-- History of transaction & Debugging sessions for easy troubleshooting.
+1. Real-time logs & metrics inside VS Code.
+2. Performance Analytics on Rollup execution time & resource usage.
+3. History of transactions & Debugging sessions for easy troubleshooting.
 
 🚀 Join the Cartesi ecosystem and leverage the power of Cartana to accelerate your blockchain application development.
 
@@ -83,6 +89,10 @@ For detailed documentation, please visit our [official documentation](https://do
 
 <p align="center">Made with ❤️ by Cartana Studio</p>
 
+#
+
+#
+
 ## 🚀 Getting Started
 
 1, Install a Cartana extention
@@ -93,19 +103,20 @@ For detailed documentation, please visit our [official documentation](https://do
 
 4, Compile, Build and Deploy Dapp to a testnet/mainet in one click !
 
+#
+
 ### 🛠 Prerequisites
 
 Before installing and using the Cartana visual stideo Code Extension, ensure your system meets the following requirements:
 
-### ✅ System Requirements
+#### ✅ System Requirements
 
-- Operating System: Windows, macOS, or Linux
+1. Operating System: Windows, macOS, or Linux
+2. VS Code Version: v1.70 or later
+3. RAM: Minimum 4GB (Recommended: 8GB+ for smooth development)
+4. Storage: At least 2GB of free space
 
-- VS Code Version: v1.70 or later
-
-- RAM: Minimum 4GB (Recommended: 8GB+ for smooth development)
-
-- Storage: At least 2GB of free space
+#
 
 ### 🔧 Required Dependencies
 
@@ -179,6 +190,8 @@ Verify installation:
 git --version
 ```
 
+#
+
 # 📥Installation
 
 1, Open VS code.
@@ -195,6 +208,8 @@ Alternative, install via command line:
 code --install-extention cartana
 ```
 
+#
+
 # 🖥️ Interface Overview
 
 The cartana visual studio code Extention provide a user-friendly interface to streamline cartesi Rollup dapp development.
@@ -204,43 +219,43 @@ The cartana visual studio code Extention provide a user-friendly interface to st
 The main area in the vs code Editor, Where you can write smart contract and dApp configerations.
 the extention enhance the experience with:
 
-- Syntax Highlighting:
+- **Syntax Highlighting**:
 
-  - provides colour coded syntax for Cartesi smart contract and Rollup sctipt.
-  - Support Python, Java script, Rust and other programing languages
-  - Highlights Cartesi-Specfic Keywords, functions and contract stractures.
+  1. Provides color-coded syntax for Cartesi smart contracts and Rollup scripts.
+  2. Supports Python, JavaScript, Rust, and other programming languages.
+  3. Highlights Cartesi-specific keywords, functions, and contract structures.
 
-- Autocomplete & Intellisense
+- **Autocomplete & Intellisense**
 
-  - smart suggestions for Cartesi Rollup APIs and functions.
-  - Hover tooltips provide inline documentation for cartesi commands.
-  - Bracket matching & auto-closing to avoid syntax errors.
+  1. Smart suggestions for Cartesi Rollup APIs and functions.
+  2. Hover tooltips provide inline documentation for Cartesi commands.
+  3. Bracket matching & auto-closing to avoid syntax errors.
 
-- Code Snippets for Faster Development
+- **Code Snippets for Faster Development**
 
-- Use predefined Cartesi snippets to quickly insert common patterns
-- Automatically fills in default Cartesi Machine Parameters.
+- **Use predefined Cartesi snippets to quickly insert common patterns**
+- **Automatically fills in default Cartesi Machine Parameters.**
 
-- Snippets available for stateful execution, transaction handling and Rollup verification.
+- **Snippets available for stateful execution, transaction handling and Rollup verification.**
 
 2️⃣ **Sidebar - Navigation**
 
 Acsses the cartana Sidebar from the Activity Bar. The Sidebar provides a stractured workflow for Rollup Development to organize and navigate your dapp project.
 
-- Project Explorer - View and manage smart contract and script.
+- **Project Explorer - View and manage smart contract and script.**
 
-- Quick Actions
-- Buttons for common tasks:
-  - Run a cartesi dApp
-  - Build & Deploy Smart Contract
-  - Simulate Transactions
-  - View Execution Logs
+- **Quick Actions**
+
+1. Run a Cartesi dApp
+2. Build & Deploy Smart Contract
+3. Simulate Transactions
+4. View Execution Logs
 
 3️⃣ **Integrated development Tools - Terminal**
 
-- Terminal with SDK Commands:
+- **Terminal with SDK Commands**
 
-  The Extention integrate Cartesi SDK tools into the VS Code terminal:
+  The Extention integrate Cartesi SDK tools into the VS Code terminal
 
   - Run `run` to excute smart contracts. - Compile Rollups with `build.` - Deploy with `deploy --network testnet.`
   - Debugging & Error Logging
