@@ -110,7 +110,7 @@
       }]
     },
     "views": {
-      "cartana": [{
+      "Cartana": [{
         "id": "CartanaView",
         "name": "Cartana"
       }]
