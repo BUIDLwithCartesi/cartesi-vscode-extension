@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "engines": {
-    "vscode": " ^1.83.1"
+    "vscode": " ^1.16.0"
   },
   "publisher": "Cartana Studio",
   "homepage": "#",
