@@ -117,13 +117,13 @@
 
     "views": {
       "Cartana": [{
-        "id": "CartanaView",
-        "name": "Cartana"
+        "id": "cartanaView",
+        "name": "cartana"
       }],
       "explorer": [
         {
-          "id": "CartanaView",
-          "name": "Cartana"
+          "id": "cartanaView",
+          "name": "cartana"
         }
       ]
     }

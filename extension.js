@@ -6,22 +6,22 @@ import CartanaDataProvider from './src/webview/CartanaDataProvider';
 export function activate(context) {
     console.log('Cartana is now activated!');
     
-    const cartanaDataProvider = new CartanaDataProvider();
-    vscode.window.registerTreeDataProvider('CartanaView', cartanaDataProvider);
+    const DataProvider = new CartanaDataProvider();
+    vscode.window.registerTreeDataProvider('cartanaView', DataProvider);
 
-    const cartanaViewProvider = new CartanaViewProvider(context.extensionUri);
 
     const createProjectCommand = vscode.commands.registerCommand('cartana.create', () => {
         vscode.window.showInformationMessage('Create Project command executed!');
     });
 
+    context.subscriptions.push(createProjectCommand);
 
-    // Register the view provider
+    const cartanaViewProvider = new CartanaViewProvider(context.extensionUri);
+
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider(CartanaViewProvider.viewType, cartanaViewProvider)
     );
 
-    context.subscriptions.push(createProjectCommand);
 }
 
 export function deactivate() {
@@ -29,7 +29,7 @@ export function deactivate() {
 }
 
 class CartanaViewProvider {
-    static viewType = 'CartanaView';
+    static viewType = 'cartanaView';
 
     /**
      * @param {vscode.Uri} extensionUri
