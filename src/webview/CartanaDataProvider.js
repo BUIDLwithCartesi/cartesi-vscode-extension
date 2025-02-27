@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 
 class CartanaDataProvider {
+    
     getTreeItem(element) {
         return element;
     }
