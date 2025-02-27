@@ -12,6 +12,7 @@ export function activate(context) {
     // what dose this cartanaViewProvider dose ? 
     const cartanaViewProvider = new CartanaViewProvider(context.extensionUri);
 
+    // Register the view provider
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider(CartanaViewProvider.viewType, cartanaViewProvider)
     );

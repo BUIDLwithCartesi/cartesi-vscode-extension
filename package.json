@@ -7,12 +7,14 @@
   "engines": {
     "vscode": "^1.97.0"
   },
+
   "publisher": "CartanaStudio",
   "homepage": "#",
   "repository": {
     "type": "git",
-    "url": "hhttps://github.com/Cartana-Studio/Cartana-vs-code"
+    "url": "https://github.com/Cartana-Studio/Cartana-vs-code"
   },
+
   "categories": [
     "Programming Languages",
     "Debuggers",
@@ -22,6 +24,7 @@
     "Testing",
     "Other"
   ],
+
   "icon": "media/icon.png",
 
   "activationEvents": [
@@ -41,6 +44,7 @@
     "onCommand:cartana.Help",
     "onView:cartanaView"
   ],
+
   "main": "./extension.js",
 
   "contributes": {
@@ -102,19 +106,28 @@
       "title": "Help"
     }
   ],
+
     "viewsContainers": {
       "activitybar": [{
         "id": "Cartana",
         "title": "Cartana",
-        "icon": "media/icon.png"
+        "icon": "media/icon1.png"
       }]
     },
+
     "views": {
       "Cartana": [{
         "id": "CartanaView",
         "name": "Cartana"
-      }]
+      }],
+      "explorer": [
+        {
+          "id": "CartanaView",
+          "name": "Cartana"
+        }
+      ]
     }
+
   },
 
   "scripts": {
