@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import CartanaDataProvider from './src/webview/CartanaDataProvider';
+
 /**
  * @param {vscode.ExtensionContext} context
  */
@@ -9,7 +10,6 @@ export function activate(context) {
     // Register the CartanaDataProvider
     const dataProvider = new CartanaDataProvider();
     vscode.window.registerTreeDataProvider('cartanaView', dataProvider);
-
 
     const createProjectCommand = vscode.commands.registerCommand('cartana.create', () => {
         vscode.window.showInformationMessage('Create Project command executed!');
@@ -22,7 +22,6 @@ export function activate(context) {
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider(CartanaViewProvider.viewType, ViewProvider)
     );
-
 }
 
 export function deactivate() {
