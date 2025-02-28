@@ -26,7 +26,7 @@ export function activate(context) {
 
     // Register Webview for the explorer view (cartanaViewExplorer)
     context.subscriptions.push(
-        vscode.window.registerTreeDataProvider('cartanaViewExplorer', dataProvider)
+        vscode.window.registerTreeDataProvider('cartanaViewExplorer', explorerdataProvider)
     );
 }
 
