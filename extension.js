@@ -9,7 +9,7 @@ export function activate(context) {
 
     // Register the CartanaDataProvider
     const explorerdataProvider = new CartanaDataProvider();
-    vscode.window.registerTreeDataProvider(CartanaViewProvider.viewTypeExplorer, explorerdataProvider);  // Register with unique ID
+    vscode.window.registerTreeDataProvider('cartanaViewExplorer', explorerdataProvider); 
 
     const createProjectCommand = vscode.commands.registerCommand('cartana.create', () => {
         vscode.window.showInformationMessage('Create Project command executed!');

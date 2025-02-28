@@ -26,11 +26,9 @@
   ],
 
   "icon": "media/icon.png",
-
-  "activationEvents": [
-  ],
-
+  
   "main": "./extension.js",
+
 
   "contributes": {
     "commands": [
