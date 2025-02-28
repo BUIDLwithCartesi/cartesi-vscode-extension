@@ -41,9 +41,8 @@
     "onCommand:cartana.settings",
     "onCommand:cartana.documentation",
     "onCommand:cartana.about",
-    "onCommand:cartana.Help",
-    "onView:cartanaView"
-  ],
+    "onCommand:cartana.Help"
+    ],
 
   "main": "./extension.js",
 
