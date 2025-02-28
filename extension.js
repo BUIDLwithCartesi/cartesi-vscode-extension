@@ -9,7 +9,7 @@ export function activate(context) {
 
     // Register the CartanaDataProvider
     const explorerdataProvider = new CartanaDataProvider();
-    vscode.window.registerTreeDataProvider('cartanaViewExplorer', explorerdataProvider);  // Updated for Explorer view
+    vscode.window.registerTreeDataProvider(CartanaViewProvider.viewTypeExplorer, explorerdataProvider);  // Register with unique ID
 
     const createProjectCommand = vscode.commands.registerCommand('cartana.create', () => {
         vscode.window.showInformationMessage('Create Project command executed!');
@@ -22,11 +22,6 @@ export function activate(context) {
     // Register Webview for the sidebar view (cartanaViewSidebar)
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider(CartanaViewProvider.viewTypeSidebar, sidebarViewProvider)
-    );
-
-    // Register Webview for the explorer view (cartanaViewExplorer)
-    context.subscriptions.push(
-        vscode.window.registerTreeDataProvider('cartanaViewExplorer', explorerdataProvider)
     );
 }
 
