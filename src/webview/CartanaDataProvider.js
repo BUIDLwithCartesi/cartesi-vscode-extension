@@ -15,6 +15,8 @@ class CartanaDataProvider {
     }
 
     getChildren(element) {
+        console.log("Fetching children for element:", element);
+
         if (element) {
             return Promise.resolve([]);
         } else {
