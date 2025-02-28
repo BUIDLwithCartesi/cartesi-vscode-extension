@@ -6,8 +6,9 @@ import CartanaDataProvider from './src/webview/CartanaDataProvider';
 export function activate(context) {
     console.log('Cartana is now activated!');
     
-    const DataProvider = new CartanaDataProvider();
-    vscode.window.registerTreeDataProvider('cartanaView', DataProvider);
+    // Register the CartanaDataProvider
+    const dataProvider = new CartanaDataProvider();
+    vscode.window.registerTreeDataProvider('cartanaView', dataProvider);
 
 
     const createProjectCommand = vscode.commands.registerCommand('cartana.create', () => {
@@ -16,10 +17,10 @@ export function activate(context) {
 
     context.subscriptions.push(createProjectCommand);
 
-    const cartanaViewProvider = new CartanaViewProvider(context.extensionUri);
+    const ViewProvider = new CartanaViewProvider(context.extensionUri);
 
     context.subscriptions.push(
-        vscode.window.registerWebviewViewProvider(CartanaViewProvider.viewType, cartanaViewProvider)
+        vscode.window.registerWebviewViewProvider(CartanaViewProvider.viewType, ViewProvider)
     );
 
 }
