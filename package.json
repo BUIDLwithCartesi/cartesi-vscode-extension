@@ -112,7 +112,8 @@
       "explorer": [
         {
           "id": "cartanaViewExplorer",
-          "name": "Cartana Explorer"
+          "name": "Cartana Explorer",
+          "dataProvider": "CartanaDataProvider"
         }
       ]
     }
