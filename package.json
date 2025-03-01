@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.97.2"
   },
   "type": "module",
   "publisher": "CartanaStudio",
@@ -30,71 +30,75 @@
   "main": "./extension.js",
 
   "activationEvents": [ 
-    ],
+  ],
 
   "contributes": {
     "commands": [
       {
-      "command": "cartana.Create",
-      "title": "Create Project"
-    },
-    {
-      "command": "cartana.build",
-      "title": "Build"
-    },
-    {
-      "command": "cartana.run",
-      "title": "Run"
-    },
-    {
-      "command": "cartana.test",
-      "title": "Test"
-    },
-    {
-      "command": "cartana.deploy",
-      "title": "Deploy"
-    },
-    {
-      "command": "cartana.addressBook",
-      "title": "Address Book"
-    },
-    {
-      "command": "cartana.clean",
-      "title": "Clean"
-    },
-    {
-      "command": "cartana.hash",
-      "title": "Hash"
-    },
-    {
-      "command": "cartana.verify",
-      "title": "Verify"
-    },
-    {
-      "command": "cartana.debug",
-      "title": "Debug"
-    },
-    {
-      "command": "cartana.settings",
-      "title": "Settings"
-    },
-    {
-      "command": "cartana.documentation",
-      "title": "Documentation"
-    },
-    {
-      "command": "cartana.about",
-      "title": "About"
-    },
-    {
-      "command": "cartana.Help",
-      "title": "Help"
-    },
-    {
-      "command": "cartana.refresh",
-      "title": "Refresh Cartana Explorer"
-    }
-  ],
+        "command": "cartana.create",
+        "title": "Create Project"
+      },
+      {
+        "command": "cartana.build",
+        "title": "Build"
+      },
+      {
+        "command": "cartana.run",
+        "title": "Run"
+      },
+      {
+        "command": "cartana.test",
+        "title": "Test"
+      },
+      {
+        "command": "cartana.deploy",
+        "title": "Deploy"
+      },
+      {
+        "command": "cartana.addressBook",
+        "title": "Address Book"
+      },
+      {
+        "command": "cartana.clean",
+        "title": "Clean"
+      },
+      {
+        "command": "cartana.hash",
+        "title": "Hash"
+      },
+      {
+        "command": "cartana.verify",
+        "title": "Verify"
+      },
+      {
+        "command": "cartana.debug",
+        "title": "Debug"
+      },
+      {
+        "command": "cartana.settings",
+        "title": "Settings"
+      },
+      {
+        "command": "cartana.documentation",
+        "title": "Documentation"
+      },
+      {
+        "command": "cartana.about",
+        "title": "About"
+      },
+      {
+        "command": "cartana.help",
+        "title": "Help"
+      },
+      {
+        "command": "cartana.refresh",
+        "title": "Refresh Cartana Explorer"
+      },
+      {
+        "command": "cartana.showWebview",
+        "title": "Show Webview"
+      }
+    ],
 
     "viewsContainers": {
       "activitybar": [{
@@ -112,8 +116,11 @@
       "explorer": [
         {
           "id": "cartanaViewExplorer",
-          "name": "Cartana Explorer",
-          "dataProvider": "CartanaDataProvider"
+          "name": "Cartana Explorer"
+        },
+        {
+          "id": "cartanaView",
+          "name": "Cartana View"
         }
       ]
     }
@@ -127,7 +134,7 @@
             "group": "navigation"
         }
     ]
-},
+  },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
@@ -142,5 +149,4 @@
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"
   }
-
 }
