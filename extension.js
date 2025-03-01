@@ -9,18 +9,6 @@ export function activate(context) {
     // Register the data provider for the cartanaViewSidebar view
     const cartanaViewProvider = new CartanaViewProvider();
     vscode.window.registerTreeDataProvider('cartanaViewSidebar', cartanaViewProvider);
-
-    // Register Sidebar Webview
-    context.subscriptions.push(
-        vscode.window.registerWebviewViewProvider('cartanaViewSidebar', {
-            resolveWebviewView(webviewView, _context, _token) {
-                webviewView.webview.options = {
-                    enableScripts: true,
-                    localResourceRoots: [vscode.Uri.joinPath(context.extensionUri, 'media')]
-                };
-            }
-        })
-    );
 }
 
 class CartanaViewProvider {
@@ -29,8 +17,7 @@ class CartanaViewProvider {
     }
 
     getChildren(element) {
-        // Return an empty array to indicate that the view is empty
-        return [];
+\        return [];
     }
 }
 
