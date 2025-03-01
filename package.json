@@ -7,7 +7,7 @@
   "engines": {
     "vscode": "^1.97.0"
   },
-
+  "type": "module",
   "publisher": "CartanaStudio",
   "homepage": "#",
   "repository": {
@@ -29,6 +29,8 @@
   
   "main": "./extension.js",
 
+  "activationEvents": [ 
+    ],
 
   "contributes": {
     "commands": [
@@ -87,6 +89,10 @@
     {
       "command": "cartana.Help",
       "title": "Help"
+    },
+    {
+      "command": "cartana.refresh",
+      "title": "Refresh Cartana Explorer"
     }
   ],
 
@@ -106,13 +112,22 @@
       "explorer": [
         {
           "id": "cartanaViewExplorer",
-          "name": "Cartana Explorer"
+          "name": "Cartana Explorer",
+          "dataProvider": "cartanaDataProvider"
         }
       ]
     }
-
   },
-
+  
+  "menus": {
+    "view/item/context": [
+        {
+            "command": "cartana.refresh",
+            "when": "viewItem == cartanaItem",
+            "group": "navigation"
+        }
+    ]
+},
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",

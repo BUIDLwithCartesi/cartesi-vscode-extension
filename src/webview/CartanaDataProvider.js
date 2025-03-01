@@ -1,4 +1,4 @@
-const vscode = require('vscode');
+import * as vscode from 'vscode';
 
 class CartanaDataProvider {
     constructor() {
@@ -22,17 +22,23 @@ class CartanaDataProvider {
         console.log("Fetching children for element:", element);
 
         if (element) {
-            // In this case, we return an empty array for elements that are leaf nodes
             return Promise.resolve([]);
         } else {
-            // Return root items. These items will appear in the Explorer view.
             return Promise.resolve([
-                new vscode.TreeItem('Icon', vscode.TreeItemCollapsibleState.None),
-                new vscode.TreeItem('Text', vscode.TreeItemCollapsibleState.None),
-                new vscode.TreeItem('Projects', vscode.TreeItemCollapsibleState.Collapsed)
+                this.createTreeItem('Icon', vscode.TreeItemCollapsibleState.None, 'icon-item'),
+                this.createTreeItem('Text', vscode.TreeItemCollapsibleState.None, 'text-item'),
+                this.createTreeItem('Projects', vscode.TreeItemCollapsibleState.Collapsed, 'projects-item')
             ]);
         }
     }
+
+    // Helper function to create tree items
+    createTreeItem(label, collapsibleState, contextValue) {
+        const item = new vscode.TreeItem(label, collapsibleState);
+        item.tooltip = `Tooltip for ${label}`;
+        item.contextValue = contextValue;
+        return item;
+    }
 }
 
-module.exports = CartanaDataProvider;
+export default CartanaDataProvider;
