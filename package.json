@@ -102,6 +102,7 @@
     "viewsWelcome": [
       {
         "view": "cartanaViewSidebar",
+        "icon": "media/icon1.png",
         "contents": "Welcome to Cartana! To get started, you can create a new project or open an existing one.\n[Create Project](command:cartana.create)\n[Open Project](command:vscode.openFolder)\nTo learn more about Cartana, [read our documentation](https://github.com/Cartana-Studio/Cartana-vs-code).",
         "when": "workbenchState == empty"
       }
