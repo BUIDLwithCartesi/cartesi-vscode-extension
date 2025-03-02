@@ -14,7 +14,6 @@
     "type": "git",
     "url": "https://github.com/Cartana-Studio/Cartana-vs-code"
   },
-
   "categories": [
     "Programming Languages",
     "Debuggers",
@@ -24,123 +23,43 @@
     "Testing",
     "Other"
   ],
-
   "icon": "media/icon.png",
-  
   "main": "./extension.js",
-
-  "activationEvents": [ 
+  "activationEvents": [
+    "onView:cartanaViewSidebar"
   ],
-
   "contributes": {
-    "commands": [
-      {
-        "command": "cartana.create",
-        "title": "Create Project"
-      },
-      {
-        "command": "cartana.build",
-        "title": "Build"
-      },
-      {
-        "command": "cartana.run",
-        "title": "Run"
-      },
-      {
-        "command": "cartana.test",
-        "title": "Test"
-      },
-      {
-        "command": "cartana.deploy",
-        "title": "Deploy"
-      },
-      {
-        "command": "cartana.addressBook",
-        "title": "Address Book"
-      },
-      {
-        "command": "cartana.clean",
-        "title": "Clean"
-      },
-      {
-        "command": "cartana.hash",
-        "title": "Hash"
-      },
-      {
-        "command": "cartana.verify",
-        "title": "Verify"
-      },
-      {
-        "command": "cartana.debug",
-        "title": "Debug"
-      },
-      {
-        "command": "cartana.settings",
-        "title": "Settings"
-      },
-      {
-        "command": "cartana.documentation",
-        "title": "Documentation"
-      },
-      {
-        "command": "cartana.about",
-        "title": "About"
-      },
-      {
-        "command": "cartana.help",
-        "title": "Help"
-      },
-      {
-        "command": "cartana.refresh",
-        "title": "Refresh Cartana Explorer"
-      },
-      {
-        "command": "cartana.showWebview",
-        "title": "Show Webview"
-      }
-    ],
-    "viewsWelcome": [
-      {
-        "view": "cartanaViewSidebar",
-        "icon": "media/icon1.png",
-        "contents": "Welcome to Cartana! To get started, you can create a new project or open an existing one.\n[Create Project](command:cartana.create)\n[Open Project](command:vscode.openFolder)\nTo learn more about Cartana, [read our documentation](https://github.com/Cartana-Studio/Cartana-vs-code).",
-        "when": "workbenchState == empty"
-      }
-    ],
-
     "viewsContainers": {
-      "activitybar": [{
-        "id": "cartana",
-        "title": "cartana",
-        "icon": "media/icon1.png"
-      }]
+      "activitybar": [
+        {
+          "id": "cartana",
+          "title": "Cartana",
+          "icon": "media/icon1.png"
+        }
+      ]
     },
-
     "views": {
-      "cartana": [{
-        "id": "cartanaViewSidebar",
-        "name": "Cartana Sidebar"
-      }],
-      "explorer": [
+      "cartana": [
         {
-          "id": "cartanaViewExplorer",
-          "name": "Cartana Explorer"
-        },
-        {
-          "id": "cartanaView",
-          "name": "Cartana View"
+          "id": "cartanaViewSidebar",
+          "name": "Cartana Sidebar"
         }
       ]
     }
   },
-  
+  "commands": [
+    {
+      "command": "cartana.showWebview",
+      "title": "Show Webview"
+    }
+  ],
   "menus": {
     "view/item/context": [
-        {
-            "command": "cartana.refresh",
-            "when": "viewItem == cartanaItem",
-            "group": "navigation"
-        }
+      {
+        "command": "cartana.showWebview",
+        "when": "viewItem == cartanaItem",
+        "group": "navigation"
+      }
     ]
   },
   "scripts": {
@@ -148,7 +67,6 @@
     "pretest": "npm run lint",
     "test": "vscode-test"
   },
-
   "devDependencies": {
     "@types/vscode": "^1.97.0",
     "@types/mocha": "^10.0.10",
