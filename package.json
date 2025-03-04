@@ -4,10 +4,11 @@
   "description": "Cartana streamlines Cartesi Rollup development by integrating essential tools directly into Visual Studio Code.",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
+
   "engines": {
     "vscode": "^1.97.2"
   },
-  "type": "module",
   "publisher": "CartanaStudio",
   "homepage": "#",
   "repository": {
@@ -25,9 +26,7 @@
   ],
   "icon": "media/icon.png",
   "main": "./extension.js",
-  "activationEvents": [
-    "onView:cartanaViewSidebar"
-  ],
+  "activationEvents": [],
   "contributes": {
     "viewsContainers": {
       "activitybar": [
@@ -42,23 +41,27 @@
       "cartana": [
         {
           "id": "cartanaViewSidebar",
-          "name": "Cartana Sidebar"
+          "name": "Welcome to Caratan 🚀"
         }
       ]
-    }
-  },
-  "commands": [
-    {
-      "command": "cartana.showWebview",
-      "title": "Show Webview"
-    }
-  ],
-  "menus": {
-    "view/item/context": [
+    },
+    "viewsWelcome": [
+      {
+        "id": "cartanaViewSidebar",
+        "title": "Cartana Sidebar",
+        "description": " Welcome to Cartana ",
+        "icon": "media/icon1.png",
+        "when": "viewContainer == cartana"
+      },
+      {
+        "view": "cartanaViewSidebar", 
+        "contents": " 🎉 Welcome to Caratan 🚀 \n\n  Cartana is designed to streamline the development of Cartesi Rollup applications. \n\n Cartana simplifies the process of creating, building, running, and deploying Cartesi applications. \n\n Get started with the following options: \n\n[ 📝 Create a New Project](command:cartana.create \"Create Project\") \n\n[ 📂 Open an Existing Project](command:vscode.openFolder \"Open Project\")\n\n For more information about Cartana, check out [Documentation 📚](https://github.com/Cartana-Studio/Cartana-vs-code)\n\n For additional inquiries, please [Contact Us 📧](https://mailto:support@cartana.io.)"
+      }
+    ],
+    "commands": [
       {
         "command": "cartana.showWebview",
-        "when": "viewItem == cartanaItem",
-        "group": "navigation"
+        "title": "Show Webview"
       }
     ]
   },
