@@ -58,6 +58,13 @@
         "contents": " 🎉 Welcome to Caratan 🚀 \n\n  Cartana is designed to streamline the development of Cartesi Rollup applications. \n\n Cartana simplifies the process of creating, building, running, and deploying Cartesi applications. \n\n Get started with the following options: \n\n[ 📝 Create a New Project](command:cartana.create \"Create Project\") \n\n[ 📂 Open an Existing Project](command:vscode.openFolder \"Open Project\")\n\n For more information about Cartana, check out [Documentation 📚](https://github.com/Cartana-Studio/Cartana-vs-code)\n\n For additional inquiries, please [Contact Us 📧](https://mailto:support@cartana.io.)"
       }
     ],
+    "grammars": [
+      {
+        "language": "javascript",
+        "scopeName": "source.js",
+        "path": "./syntaxes/javascript.tmLanguage.json"
+      }
+    ],
     "commands": [
       {
         "command": "cartana.showWebview",
