@@ -2,6 +2,7 @@
 "scopeName":"source.js",
 "patterns" : [
     { "include": "#main" },
+    { "include": "#template-string" },
     {
         "name": "variable.other.method.js",
         "match": "(\\.\\s*)([_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*)",
@@ -239,6 +240,176 @@
             "match": "^[A-Z][\\s\\S]*"
           }
         ]
-      }   
+      },
+    "template-string": {
+        "patterns" : [
+            {
+                "name": "string.template.embedded.graphql",
+                "begin": "(`)",
+                "beginCaptures": {
+                    "1":{
+                        "name": "punctuation.definition.string.template.begin.js"
+                    }
+                },
+                "end": "(`)",
+                "endCaptures": {
+                    "1":{
+                        "name": "punctuation.definition.string.template.end.js"
+                    }
+                },
+                "patterns": [
+                    {
+                        "include": "#interpolation"
+                    },
+                    {
+                        "name": "string.template.js",
+                        "match": "[^`$]+"
+                    }
+                ]
+            }
+        ]
+    },
+    "interpolation": {
+        "patterns": [
+            {
+                "name": "meta.embedded.line.js",
+                "begin": "(\\$\\{)",
+                "beginCaptures": {
+                    "1": {
+                        "name": "punctuation.section.embedded.begin.js"
+                    }
+                },
+                "end": "(\\})",
+                "endCaptures": {
+                    "1": {
+                        "name": "punctuation.section.embedded.end.js"
+                    }
+                },
+                "patterns": [
+                    {
+                        "include": "source.js"
+                    }
+                ]
+            }
+        ]
+    },
+    "embedded-language": {
+        "patterns": [
+            {
+                "name": "srting.template.embedded.css",
+                "begin": "(\\b(?:styled(?:\\([^)]*\\))?(?:\\s*\\.\\s*\\w+(?:\\([^)]*\\))*)*|css(?:\\s*\\.\\s*(?:global|resolve))?|createGlobalStyle|keyframes)\\s*`)",
+                "beginCaptures": {
+                    "1": {
+                        "name": "punctuation.definition.string.template.begin.js"
+                    }
+                },
+                "patterns": [
+                    {
+                        "include": "source.css"
+                    }
+                ]
+            },
+            {
+                "name": "string.template.embedded.html",
+                "begin": "(\\bhtml|\\.\\s*(?:inner|outer)HTML\\s*\\+?=\\s*`)",
+                "beginCaptures": {
+                  "1": {
+                    "name": "punctuation.definition.string.template.begin.js"
+                  }
+                },
+                "end": "(`)",
+                "endCaptures": {
+                    "1": {
+                      "name": "punctuation.definition.string.template.end.js"
+                    }
+                },
+                "patterns": [
+                    {
+                      "include": "text.html.basic"
+                    }
+                  ]                                   
+            },
+            {
+               "name": "string.template.embedded.svg",
+            "begin": "(\\bsvg\\s*`)",
+            "beginCaptures": {
+              "1": {
+                "name": "punctuation.definition.string.template.begin.js"
+              }
+            },
+            "end": "(`)",
+            "endCaptures": {
+              "1": {
+                "name": "punctuation.definition.string.template.end.js"
+              }
+            },
+            "patterns": [
+              {
+                "include": "text.xml.svg"
+              }
+            ] 
+            },
+            {
+                "name": "string.template.embedded.markdown",
+            "begin": "(\\b(?:markdown|md)\\s*`)",
+            "beginCaptures": {
+              "1": {
+                "name": "punctuation.definition.string.template.begin.js"
+              }
+            },
+            "end": "(`)",
+            "endCaptures": {
+              "1": {
+                "name": "punctuation.definition.string.template.end.js"
+              }
+            },
+            "patterns": [
+              {
+                "include": "text.html.markdown"
+              }
+            ]
+            },
+            {
+                "name": "string.template.embedded.graphql",
+            "begin": "(\\b(?:gql|graphql(?:\\s*\\.\\s*experimental)?)\\s*`)",
+            "beginCaptures": {
+              "1": {
+                "name": "punctuation.definition.string.template.begin.js"
+              }
+            },
+            "end": "(`)",
+            "endCaptures": {
+              "1": {
+                "name": "punctuation.definition.string.template.end.js"
+              }
+            },
+            "patterns": [
+              {
+                "include": "source.graphql"
+              }
+            ]
+            },
+            {
+                "name": "string.template.embedded.sql",
+                "begin": "(\\bsql\\s*`)",
+                "beginCaptures": {
+                  "1": {
+                    "name": "punctuation.definition.string.template.begin.js"
+                  }
+                },
+                "end": "(`)",
+                "endCaptures": {
+                  "1": {
+                    "name": "punctuation.definition.string.template.end.js"
+                  }
+                },
+                "patterns": [
+                  {
+                    "include": "source.sql"
+                  }
+                ]
+            }
+        ]
+    }
 }
 }
