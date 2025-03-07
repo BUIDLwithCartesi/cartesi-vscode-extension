@@ -2,7 +2,46 @@
 "scopeName":"source.js",
 "patterns" : [
     { "include": "#main" },
-    { "include": "#template-string" },
+    {
+      "include": "#class-name"
+    },
+    {
+      "include": "#template-string"
+    },    
+    { "include": "#embedded-template-string" },
+    {
+      "include": "#keyword"
+    },
+    {
+      "include": "#function-name"
+    },
+    {
+      "include": "#number" 
+    },
+    {
+      "include": "#operator"
+    },
+    {
+      "include": "#regex"
+    },
+    {
+      "include": "#function-variable"
+    },  
+    {
+      "include": "#parameter"
+    },
+    {
+      "include": "#constant"
+    },
+    {
+      "include": "#hashbang"
+    }, 
+    {
+      "include": "#literal-property"
+    }, 
+    {
+      "include": "#cc"
+    },     
     {
         "name": "variable.other.method.js",
         "match": "(\\.\\s*)([_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*)",
@@ -198,6 +237,38 @@
             "name": "constant.numeric.js"
         }
     ],
+    "class-name": {
+      "patterns": [
+        {
+          "name": "entity.name.type.class.js",
+          "match": "(\\b(?:class|extends|implements|instanceof|interface|new)\\s+)[\\w.\\\\]+"
+        },
+        {
+          "name": "entity.name.type.class.js",
+          "match": "(^|[^$\\w\\xA0-\\uFFFF])(?!\\s)[_$A-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\.(?:constructor|prototype))"
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "name": "keyword.control.js",
+          "match": "((?:^|\\})\\s*)catch\\b"
+        },
+        {
+          "name": "keyword.control.js",
+          "match": "(^|[^.]|\\.\\.\\.\\s*)\\b(?:as|assert(?=\\s*\\{)|async(?=\\s*(?:function\\b|\\(|[$\\w\\xA0-\\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\\s*(?:\\{|$))|for|from(?=\\s*(?:['\"]|$))|function|(?:get|set)(?=\\s*(?:[#\\[$\\w\\xA0-\\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\\b"
+        }
+      ]
+    },
+    "operator": {
+      "name": "keyword.operator.js",
+      "match": "--|\\+\\+|\\*\\*=?|=>|&&=?|\\|\\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\\.{3}|\\?\\?=?|\\?\\.?|[~:]"
+    },
+    "regex": {
+      "name": "string.regexp.js",
+      "match": "((?:^|[^$\\w\\xA0-\\uFFFF.\"'\\])\\s]|\\b(?:return|yield))\\s*/(?:\\[(?:[^\\\\\\]\\r\\n]|\\\\.)*\\]|\\\\.|[^/\\\\\\[\\r\\n])+/[dgimyus]{0,7}(?=(?:\\s|/\\*(?:[^*]|\\*(?!/))*\\*/)*(?:$|[\\r\\n,.;:})\\]]|//))"
+    },
     "function":{
         "patterns":[
             {
@@ -205,13 +276,51 @@
             }
         ]
     },
+    "function-name": {
+      "name": "entity.name.function.js",
+      "match": "#?(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\s*(?:\\.\\s*(?:apply|bind|call)\\s*)?\\()"
+    },
+    "number": {
+      "name": "constant.numeric.js",
+      "match": "(^|[^\\w$])(?:NaN|Infinity|0[bB][01]+(?:_[01]+)*n?|0[oO][0-7]+(?:_[0-7]+)*n?|0[xX][\\dA-Fa-f]+(?:_[\\dA-Fa-f]+)*n?|\\d+(?:_\\d+)*n|(?:\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\.\\d+(?:_\\d+)*)(?:[Ee][+-]?\\d+(?:_\\d+)*)?)(?![\\w$])"
+    },
     "function-variable": {
+      "name": "entity.name.function.js",
+      "match": "#?(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\s*[=:]\\s*(?:async\\s*)?(?:\\bfunction\\b|(?:\\((?:[^()]|\\([^()]*\\))*\\)|(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*)\\s*=>))",
         "patterns":[
             {
                 "include": "#maybe-class-name"
             }
         ]
     },
+    "parameter": {
+      "patterns": [
+        {
+          "name": "variable.parameter.js",
+          "match": "(function(?:\\s+(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*)?\\s*\\(\\s*)(?!\\s)(?:[^()\\s]|\\s+(?![\\s)])|\\([^()]*\\))+(?=\\s*\\))"
+        },
+        {
+          "name": "variable.parameter.js",
+          "match": "(^|[^$\\w\\xA0-\\uFFFF])(?!\\s)[_$a-z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\s*=>)"
+        },
+        {
+          "name": "variable.parameter.js",
+          "match": "(\\(\\s*)(?!\\s)(?:[^()\\s]|\\s+(?![\\s)])|\\([^()]*\\))+(?=\\s*\\)\\s*=>)"
+        },
+        {
+          "name": "variable.parameter.js",
+          "match": "((?:\\b|\\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\\w\\xA0-\\uFFFF]))(?:(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*\\s*)\\(\\s*|\\]\\s*\\(\\s*)(?!\\s)(?:[^()\\s]|\\s+(?![\\s)])|\\([^()]*\\))+(?=\\s*\\)\\s*\\{)"
+        }
+      ]
+    },
+    "constant": {
+      "name": "constant.language.js",
+      "match": "\\b[A-Z](?:[A-Z_]|\\dx?)*\\b"
+    },
+    "hashbang": {
+      "name": "comment.line.hashbang.js",
+      "match": "^#!.*"
+    },    
     "method": {
         "patterns":[
             {
@@ -241,7 +350,45 @@
           }
         ]
       },
-    "template-string": {
+      "template-string": {
+        "name": "string.template.js",
+        "begin": "`",
+        "end": "`",
+        "patterns": [
+          {
+            "name": "punctuation.definition.string.begin.js",
+            "match": "^`"
+          },
+          {
+            "name": "punctuation.definition.string.end.js",
+            "match": "`$"
+          },
+          {
+            "name": "interpolation.js",
+            "begin": "\\$\\{",
+            "end": "\\}",
+            "patterns": [
+              {
+                "name": "punctuation.section.embedded.begin.js",
+                "match": "^\\$\\{"
+              },
+              {
+                "name": "punctuation.section.embedded.end.js",
+                "match": "\\}$"
+              },
+              {
+                "include": "source.js"
+              }
+            ]
+          },
+          {
+            "name": "string.quoted.template.js",
+            "match": "[^`]+"
+          }
+        ]
+      },
+
+    "embedded-template-string": {
         "patterns" : [
             {
                 "name": "string.template.embedded.graphql",
@@ -350,12 +497,12 @@
             ] 
             },
             {
-                "name": "string.template.embedded.markdown",
-            "begin": "(\\b(?:markdown|md)\\s*`)",
-            "beginCaptures": {
-              "1": {
-                "name": "punctuation.definition.string.template.begin.js"
-              }
+              "name": "string.template.embedded.markdown",
+              "begin": "(\\b(?:markdown|md)\\s*`)",
+              "beginCaptures": {
+                "1": {
+                  "name": "punctuation.definition.string.template.begin.js"
+                }
             },
             "end": "(`)",
             "endCaptures": {
@@ -370,12 +517,12 @@
             ]
             },
             {
-                "name": "string.template.embedded.graphql",
-            "begin": "(\\b(?:gql|graphql(?:\\s*\\.\\s*experimental)?)\\s*`)",
-            "beginCaptures": {
-              "1": {
-                "name": "punctuation.definition.string.template.begin.js"
-              }
+              "name": "string.template.embedded.graphql",
+              "begin": "(\\b(?:gql|graphql(?:\\s*\\.\\s*experimental)?)\\s*`)",
+              "beginCaptures": {
+                "1": {
+                  "name": "punctuation.definition.string.template.begin.js"
+                }
             },
             "end": "(`)",
             "endCaptures": {
@@ -410,6 +557,14 @@
                 ]
             }
         ]
-    }
+    },
+    "string-property": {
+      "name": "string.quoted.double.js",
+      "match": "((?:^|[,{])[ \\t]*)([\"'])(?:\\\\(?:\\r\\n|[\\s\\S])|(?!\\2)[^\\\\\\r\\n])*\\2(?=\\s*:)"
+    },
+    "literal-property": {
+      "name": "variable.other.property.js",
+      "match": "((?:^|[,{])[ \\t]*)(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?=\\s*:)"
+    }  
 }
 }
