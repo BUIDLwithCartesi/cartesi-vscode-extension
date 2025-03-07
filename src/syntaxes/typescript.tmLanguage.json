@@ -1,0 +1,144 @@
+{
+  "scopeName": "source.ts",
+  "patterns" : [
+    {
+        "include": "#class-name"
+    },
+    {
+        "include": "#builtin"
+    },
+    {
+        "include": "#keyword"
+    },
+    {
+        "include": "#decorator"
+    },
+    {
+        "include": "#generic-function"
+    },
+    {
+      "include": "#variable"
+    },
+    {
+      "include": "#function"
+    },
+    {
+      "include": "#string"
+    },{
+      "include": "#number"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#operator"
+    }
+  ],
+  "repository": {
+    "class-name": {
+        "patterns": [
+          {
+            "name": "entity.name.type.class.ts",
+            "match": "(\\b(?:class|extends|implements|instanceof|interface|new|type)\\s+)(?!keyof\\b)(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*(?:\\s*<(?:[^<>]|<(?:[^<>]|<[^<>]*>)*>)*>)?"
+          }
+        ]
+    },    
+    "builtin": {
+        "name": "support.type.builtin.ts",
+        "match": "\\b(?:Array|Function|Promise|any|boolean|console|never|number|string|symbol|unknown)\\b"
+    },
+    "keyword": {
+        "patterns": [
+        {
+          "name": "keyword.control.ts",
+          "match": "\\b(?:abstract|declare|is|keyof|readonly|require)\\b"
+        },
+        {
+          "name": "keyword.control.ts",
+          "match": "\\b(?:asserts|infer|interface|module|namespace|type)\\b(?=\\s*(?:[{_$a-zA-Z\\xA0-\\uFFFF]|$))"
+        },
+        {
+          "name": "keyword.control.ts",
+          "match": "\\btype\\b(?=\\s*(?:[\\{*]|$))"
+        }
+      ]
+    },
+    "decorator": {
+        "name": "meta.decorator.ts",
+        "begin": "@",
+        "end": "(?=\\s|$)",
+        "patterns": [
+          {
+            "name": "keyword.operator.decorator.ts",
+            "match": "^@"
+          },
+          {
+            "name": "entity.name.function.decorator.ts",
+            "match": "[$\\w\\xA0-\\uFFFF]+"
+          }
+        ]
+      },
+      "generic-function": {
+        "name": "meta.generic-function.ts",
+        "begin": "#?(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*\\s*<",
+        "end": "(?=\\s*\\()",
+        "patterns": [
+          {
+            "name": "entity.name.function.ts",
+            "match": "^#?(?!\\s)[_$a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*"
+          },
+          {
+            "name": "meta.generic.ts",
+            "begin": "<",
+            "end": ">",
+            "patterns": [
+              {
+                "include": "#class-name"
+              }
+            ]
+          }
+        ]
+      },
+      "variable": {
+        "name": "variable.other.ts",
+        "match": "\\b(?:let|const|var)\\b\\s+[$_a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*"
+      },
+      "function": {
+        "name": "entity.name.function.ts",
+        "match": "\\bfunction\\b\\s+[$_a-zA-Z\\xA0-\\uFFFF](?:(?!\\s)[$\\w\\xA0-\\uFFFF])*"
+      },
+      "string": {
+        "name": "string.quoted.ts",
+        "begin": "\"",
+        "end": "\"",
+        "patterns": [
+          {
+            "name": "constant.character.escape.ts",
+            "match": "\\\\."
+          }
+        ]
+      },
+      "number": {
+        "name": "constant.numeric.ts",
+        "match": "\\b\\d+(?:\\.\\d+)?(?:e[+-]?\\d+)?\\b"
+      },
+      "comment": {
+        "patterns": [
+          {
+            "name": "comment.line.double-slash.ts",
+            "begin": "//",
+            "end": "$"
+          },
+          {
+            "name": "comment.block.ts",
+            "begin": "/\\*",
+            "end": "\\*/"
+          }
+        ]
+      },
+      "operator": {
+        "name": "keyword.operator.ts",
+        "match": "\\+|\\-|\\*|\\/|%|=|==|===|!=|!==|<|>|<=|>=|&&|\\|\\||!|\\?|:|\\+=|\\-=|\\*=|\\/=|%=|\\+\\+|\\-\\-|\\&|\\||\\^|~|<<|>>|>>>"
+      }   
+  }
+}
