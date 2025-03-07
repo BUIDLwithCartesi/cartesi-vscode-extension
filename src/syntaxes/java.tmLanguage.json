@@ -1,0 +1,333 @@
+{
+    "scopeName": "source.java",
+    "patterns": [
+      {
+        "include": "#class-name"
+      },
+      {
+        "include": "#keyword"
+      },
+      {
+        "include": "#function"
+      },
+      {
+        "include": "#number"
+      },
+      {
+        "include": "#operator"
+      },
+      {
+        "include": "#constant"
+      },
+      {
+        "include": "#triple-quoted-string"
+      },
+      {
+        "include": "#char"
+      },
+      {
+        "include": "#annotation"
+      },
+      {
+        "include": "#generics"
+      },
+      {
+        "include": "#import"
+      },
+      {
+        "include": "#namespace"
+      },
+      {
+        "include": "#comment"
+      },
+      {
+        "include": "#string"
+      },
+      {
+        "include": "#text-block"
+      },
+      {
+        "include": "#switch-expression"
+      }
+    ],
+    "repository": {
+      "class-name": {
+        "patterns": [
+          {
+            "name": "entity.name.type.class.java",
+            "match": "(^|[^\\w.])(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*[A-Z](?:[\\d_A-Z]*[a-z]\\w*)?\\b",
+            "lookbehind": true,
+            "inside": {
+              "namespace": {
+                "pattern": "^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?",
+                "inside": {
+                  "punctuation": "\\."
+                }
+              },
+              "punctuation": "\\."
+            }
+          },
+          {
+            "name": "entity.name.type.class.java",
+            "match": "(^|[^\\w.])(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*[A-Z]\\w*(?=\\s+\\w+\\s*[;,=()]|\\s*(?:\\[[\\s,]*\\]\\s*)?::\\s*new\\b)",
+            "lookbehind": true,
+            "inside": {
+              "namespace": {
+                "pattern": "^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?",
+                "inside": {
+                  "punctuation": "\\."
+                }
+              },
+              "punctuation": "\\."
+            }
+          },
+          {
+            "name": "entity.name.type.class.java",
+            "match": "(\\b(?:class|enum|extends|implements|instanceof|interface|new|record|throws)\\s+)(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*\\s*\\.\\s*)*[A-Z]\\w*\\b",
+            "lookbehind": true,
+            "inside": {
+              "namespace": {
+                "pattern": "^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?",
+                "inside": {
+                  "punctuation": "\\."
+                }
+              },
+              "punctuation": "\\."
+            }
+          }
+        ]
+      },
+      "keyword": {
+        "name": "keyword.control.java",
+        "match": "\\b(?:abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|exports|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|module|native|new|non-sealed|null|open|opens|package|permits|private|protected|provides|public|record(?!\\s*[(){}[\\]<>=%~.:,;?+\\-*/&|^])|requires|return|sealed|short|static|strictfp|super|switch|synchronized|this|throw|throws|to|transient|transitive|try|uses|var|void|volatile|while|with|yield)\\b"
+      },
+      "function": {
+        "patterns": [
+          {
+            "name": "entity.name.function.java",
+            "match": "(\\b(?:abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|do|double|else|enum|exports|extends|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|module|native|new|non-sealed|null|open|opens|package|permits|private|protected|provides|public|record(?!\\s*[(){}[\\]<>=%~.:,;?+\\-*/&|^])|requires|return|sealed|short|static|strictfp|super|switch|synchronized|this|throw|throws|to|transient|transitive|try|uses|var|void|volatile|while|with|yield)\\b)"
+          },
+          {
+            "name": "entity.name.function.java",
+            "match": "(::\\s*)[a-z_]\\w*",
+            "lookbehind": true
+          }
+        ]
+      },
+      "number": {
+        "name": "constant.numeric.java",
+        "match": "\\b0b[01][01_]*L?\\b|\\b0x(?:\\.[\\da-f_p+-]+|[\\da-f_]+(?:\\.[\\da-f_p+-]+)?)\\b|(?:\\b\\d[\\d_]*(?:\\.[\\d_]*)?|\\B\\.\\d[\\d_]*)(?:e[+-]?\\d[\\d_]*)?[dfl]?",
+        "flags": "i"
+      },
+      "operator": {
+        "name": "keyword.operator.java",
+        "match": "(^|[^.])(?:<<=?|>>>?=?|->|--|\\+\\+|&&|\\|\\||::|[?:~]|[-+*/%&|^!=<>]=?)",
+        "lookbehind": true
+      },
+      "constant": {
+        "name": "constant.language.java",
+        "match": "\\b[A-Z][A-Z_\\d]+\\b"
+      },
+      "triple-quoted-string": {
+        "name": "string.quoted.triple.java",
+        "begin": "\"\"\"[ \\t]*[\\r\\n]",
+        "end": "\"\"\"",
+        "patterns": [
+          {
+            "name": "constant.character.escape.java",
+            "match": "\\\\."
+          },
+          {
+            "name": "string.quoted.triple.java",
+            "match": "(?:\"|\"\")?(?:\\\\.|[^\"\\\\])"
+          }
+        ],
+        "greedy": true
+      },
+      "char": {
+        "name": "string.quoted.single.java",
+        "begin": "'",
+        "end": "'",
+        "patterns": [
+          {
+            "name": "constant.character.escape.java",
+            "match": "\\\\."
+          },
+          {
+            "name": "string.quoted.single.java",
+            "match": "[^'\\\\]{1,6}"
+          }
+        ],
+        "greedy": true
+      },
+      "annotation": {
+        "name": "meta.annotation.java",
+        "begin": "(@\\w+(?:\\s*\\.\\s*\\w+)*)",
+        "end": "(?=\\s|$)",
+        "patterns": [
+          {
+            "name": "punctuation.definition.annotation.java",
+            "match": "^@"
+          },
+          {
+            "name": "entity.name.annotation.java",
+            "match": "\\w+(?:\\s*\\.\\s*\\w+)*"
+          }
+        ],
+        "lookbehind": true
+      },
+      "generics": {
+        "name": "meta.generics.java",
+        "begin": "<",
+        "end": ">",
+        "patterns": [
+          {
+            "include": "#class-name"
+          },
+          {
+            "include": "#keyword"
+          },
+          {
+            "name": "punctuation.definition.generics.java",
+            "match": "[<>(),.:]"
+          },
+          {
+            "name": "keyword.operator.generics.java",
+            "match": "[?&|]"
+          }
+        ]
+      },
+      "import": {
+        "patterns": [
+          {
+            "name": "meta.import.java",
+            "begin": "(\\bimport\\s+)",
+            "end": "(?=\\s*;)",
+            "patterns": [
+              {
+                "name": "entity.name.namespace.java",
+                "match": "(?:[a-z]\\w*\\s*\\.\\s*)*(?:[A-Z]\\w*|\\*)",
+                "lookbehind": true,
+                "inside": {
+                  "namespace": {
+                    "pattern": "^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?",
+                    "inside": {
+                      "punctuation": "\\."
+                    }
+                  },
+                  "punctuation": "\\.",
+                  "operator": "\\*",
+                  "class-name": "\\w+"
+                }
+              }
+            ],
+            "lookbehind": true
+          },
+          {
+            "name": "meta.import.static.java",
+            "begin": "(\\bimport\\s+static\\s+)",
+            "end": "(?=\\s*;)",
+            "patterns": [
+              {
+                "name": "entity.name.namespace.java",
+                "match": "(?:[a-z]\\w*\\s*\\.\\s*)*(?:\\w+|\\*)",
+                "lookbehind": true,
+                "inside": {
+                  "namespace": {
+                    "pattern": "^[a-z]\\w*(?:\\s*\\.\\s*[a-z]\\w*)*(?:\\s*\\.)?",
+                    "inside": {
+                      "punctuation": "\\."
+                    }
+                  },
+                  "punctuation": "\\.",
+                  "operator": "\\*",
+                  "class-name": "\\w+"
+                }
+              }
+            ],
+            "lookbehind": true,
+            "alias": "static"
+          }
+        ]
+      },
+      "namespace": {
+        "name": "entity.name.namespace.java",
+        "begin": "(\\b(?:exports|import(?:\\s+static)?|module|open|opens|package|provides|requires|to|transitive|uses|with)\\s+)(?!<keyword>)[a-z]\\w*(?:\\.[a-z]\\w*)*\\.?",
+        "end": "(?=\\s|$)",
+        "patterns": [
+          {
+            "name": "punctuation.definition.namespace.java",
+            "match": "\\."
+          }
+        ],
+        "lookbehind": true
+      },
+      "comment": {
+        "patterns": [
+          {
+            "name": "comment.line.double-slash.java",
+            "begin": "//",
+            "end": "$"
+          },
+          {
+            "name": "comment.block.java",
+            "begin": "/\\*",
+            "end": "\\*/"
+          },
+          {
+            "name": "comment.block.documentation.java",
+            "begin": "/\\*\\*",
+            "end": "\\*/",
+            "patterns": [
+              {
+                "name": "comment.block.documentation.tag.java",
+                "match": "@[A-Za-z]+"
+              }
+            ]
+          }
+        ]
+      },
+      "string": {
+        "patterns": [
+          {
+            "name": "string.quoted.double.java",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+              {
+                "name": "constant.character.escape.java",
+                "match": "\\\\."
+              }
+            ],
+            "greedy": true
+          }
+        ]
+      },
+      "text-block": {
+        "name": "string.quoted.triple.java",
+        "begin": "\"\"\"",
+        "end": "\"\"\"",
+        "patterns": [
+          {
+            "name": "constant.character.escape.java",
+            "match": "\\\\."
+          }
+        ],
+        "greedy": true
+      },
+      "switch-expression": {
+        "name": "keyword.control.switch.java",
+        "match": "\\bswitch\\b\\s*\\(.*?\\)\\s*\\{",
+        "patterns": [
+          {
+            "name": "keyword.control.case.java",
+            "match": "\\bcase\\b|\\bdefault\\b"
+          },
+          {
+            "name": "keyword.operator.arrow.java",
+            "match": "->"
+          }
+        ]
+      }
+    }
+  }
