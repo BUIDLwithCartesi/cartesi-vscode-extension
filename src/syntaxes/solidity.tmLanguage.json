@@ -1,0 +1,136 @@
+{
+    "scopeName": "source.solidity",
+    "fileTypes": [".sol"],
+    "patterns": [
+      {
+        "include": "#class-name"
+      },
+      {
+        "include": "#keyword"
+      },
+      {
+        "include": "#operator"
+      },
+      {
+        "include": "#builtin"
+      },
+      {
+        "include": "#version"
+      },
+      {
+        "include": "#comment"
+      },
+      {
+        "include": "#string"
+      },
+      {
+        "include": "#number"
+      }
+    ],
+    "repository": {
+      "class-name": {
+        "name": "entity.name.class.solidity",
+        "begin": "(\\b(?:contract|enum|interface|library|new|struct|using)\\s+)(?!\\d)[\\w$]+",
+        "end": "(?=\\s|$)",
+        "patterns": [
+          {
+            "name": "entity.name.class.solidity",
+            "match": "[\\w$]+"
+          }
+        ],
+        "lookbehind": true
+      },
+      "keyword": {
+        "name": "keyword.control.solidity",
+        "match": "\\b(?:_|anonymous|as|assembly|assert|break|calldata|case|constant|constructor|continue|contract|default|delete|do|else|emit|enum|event|external|for|from|function|if|import|indexed|inherited|interface|internal|is|let|library|mapping|memory|modifier|new|payable|pragma|private|public|pure|require|returns?|revert|selfdestruct|solidity|storage|struct|suicide|switch|this|throw|using|var|view|while)\\b"
+      },
+      "operator": {
+        "name": "keyword.operator.solidity",
+        "match": "=>|->|:=|=:|\\*\\*|\\+\\+|--|\\|\\||&&|<<=?|>>=?|[-+*/%^&|<>!=]=?|[~?]"
+      },
+      "builtin": {
+        "name": "support.type.builtin.solidity",
+        "match": "\\b(?:address|bool|byte|u?int(?:8|16|24|32|40|48|56|64|72|80|88|96|104|112|120|128|136|144|152|160|168|176|184|192|200|208|216|224|232|240|248|256)?|string|bytes(?:[1-9]|[12]\\d|3[0-2])?)\\b"
+      },
+      "version": {
+        "name": "constant.numeric.version.solidity",
+        "begin": "([<>]=?|\\^)",
+        "end": "\\b",
+        "patterns": [
+          {
+            "name": "constant.numeric.version.solidity",
+            "match": "\\d+\\.\\d+\\.\\d+"
+          }
+        ],
+        "lookbehind": true,
+        "alias": "number"
+      },
+      "comment": {
+        "patterns": [
+          {
+            "name": "comment.block.documentation.solidity",
+            "begin": "/\\*\\*",
+            "end": "\\*/",
+            "patterns": [
+              {
+                "name": "comment.block.documentation.solidity",
+                "match": "[^*/]+"
+              }
+            ]
+          },
+          {
+            "name": "comment.block.solidity",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": [
+              {
+                "name": "comment.block.solidity",
+                "match": "[^*/]+"
+              }
+            ]
+          },
+          {
+            "name": "comment.line.double-slash.solidity",
+            "begin": "//",
+            "end": "$",
+            "patterns": [
+              {
+                "name": "comment.line.double-slash.solidity",
+                "match": ".+"
+              }
+            ]
+          }
+        ]
+      },
+      "string": {
+        "patterns": [
+          {
+            "name": "string.quoted.double.solidity",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+              {
+                "name": "constant.character.escape.solidity",
+                "match": "\\\\."
+              }
+            ]
+          },
+          {
+            "name": "string.quoted.single.solidity",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+              {
+                "name": "constant.character.escape.solidity",
+                "match": "\\\\."
+              }
+            ]
+          }
+        ]
+      },
+      "number": {
+        "name": "constant.numeric.solidity",
+        "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+      }
+    }
+  }
