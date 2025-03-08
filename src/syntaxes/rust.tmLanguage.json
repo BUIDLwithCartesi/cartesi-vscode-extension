@@ -1,0 +1,149 @@
+{
+    "scopeName": "source.rust",
+    "fileTaype": [".rs"],
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#char"
+        },
+        {
+            "include": "#function"
+        },
+        {
+            "include": "#macro"
+        },
+        {
+            "include": "#keyword"
+        },
+        {
+            "include": "#boolean"
+        },
+        {
+            "include": "#number"
+        },
+        {
+            "include": "#operator"
+        },
+        {
+            "include": "#punctuation"
+        },
+        {
+            "include": "#lifetime"
+        },
+        {
+            "include": "#type"
+        },
+        {
+            "include": "#attribute"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "name": "comment.line.double-slash.rust",
+            "begin": "//",
+            "end": "$",
+            "patterns": [
+                {
+                    "name": "comment.block.documentation.rust",
+                    "begin": "///",
+                    "end": "$"
+                },
+                {
+                    "name": "comment.block.documentation.rust",
+                    "begin": "//!",
+                    "end": "$"
+                }
+            ]
+        },
+        "string": {
+            "name": "string.quoted.double.rust",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.rust",
+                    "match": "\\\\."
+                }
+            ],
+            "greedy": true
+        },
+        "char": {
+            "name": "string.quoted.single.rust",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.rust",
+                    "match": "\\\\."
+                }
+            ],
+            "greedy": true
+        },
+        "function": {
+            "name": "entity.name.function.rust",
+            "begin": "\\bfn\\s+",
+            "end": "(?=\\s*\\()",
+            "patterns": [
+                {
+                    "name": "entity.name.function.rust",
+                    "match": "[a-zA-Z_][a-zA-Z0-9_]*"
+                }
+            ]
+        },
+        "macro": {
+            "name": "entity.name.macro.rust",
+            "begin": "\\b[a-zA-Z_][a-zA-Z0-9_]*!",
+            "end": "(?=\\s*\\()",
+            "patterns": [
+                {
+                    "name": "entity.name.macro.rust",
+                    "match": "[a-zA-Z_][a-zA-Z0-9_]*"
+                }
+            ]
+        },
+        "keyword": {
+            "name": "keyword.control.rust",
+            "match": "\\b(?:as|async|await|break|const|continue|crate|dyn|else|enum|extern|false|fn|for|if|impl|in|let|loop|match|mod|move|mut|pub|ref|return|self|Self|static|struct|super|trait|true|type|unsafe|use|where|while)\\b"
+        },
+        "boolean": {
+            "name": "constant.language.boolean.rust",
+            "match": "\\b(?:true|false)\\b"
+        },
+        "number": {
+            "name": "constant.numeric.rust",
+            "match": "\\b(?:0b[01_]+|0o[0-7_]+|0x[0-9a-fA-F_]+|[0-9_]+(?:\\.[0-9_]+)?(?:[eE][+-]?[0-9_]+)?)\\b"
+        },
+        "operator": {
+            "name": "keyword.operator.rust",
+            "match": "[-+*/%&|^!~=<>]=?|\\*\\*|<<|>>|&&|\\|\\||::|->|=>|\\?"
+        },
+        "punctuation": {
+            "name": "punctuation.definition.rust",
+            "match": "[{}[\\];(),.:]"
+        },
+        "lifetime": {
+            "name": "entity.name.lifetime.rust",
+            "match": "'[a-zA-Z_][a-zA-Z0-9_]*"
+        },
+        "type": {
+            "name": "storage.type.rust",
+            "match": "\\b(?:bool|char|f32|f64|i8|i16|i32|i64|i128|isize|str|u8|u16|u32|u64|u128|usize)\\b"
+        },
+        "attribute": {
+            "name": "meta.attribute.rust",
+            "begin": "#\\[",
+            "end": "\\]",
+            "patterns": [
+                {
+                    "name": "meta.attribute.rust",
+                    "match": "[a-zA-Z_][a-zA-Z0-9_]*"
+                }
+            ]
+        }
+    }
+}
