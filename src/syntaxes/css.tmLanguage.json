@@ -1,0 +1,337 @@
+{
+    "scopeName": "source.css",
+    "patterns": [
+      {
+        "include": "#variable"
+      },
+      {
+        "include": "#operator"
+      },
+      {
+        "include": "#hexcode"
+      },
+      {
+        "include": "#color"
+      },
+      {
+        "include": "#entity"
+      },
+      {
+        "include": "#unit"
+      },
+      {
+        "include": "#number"
+      },                  
+      {
+        "include": "#comment"
+      },
+      {
+        "include": "#atrule"
+      },
+      {
+        "include": "#url"
+      },
+      {
+        "include": "#selector"
+      },
+      {
+        "include": "#string"
+      },
+      {
+        "include": "#property"
+      },
+      {
+        "include": "#important"
+      },
+      {
+        "include": "#function"
+      },
+      {
+        "include": "#punctuation"
+      }
+    ],
+    "repository": {
+      "variable": {
+        "name": "variable.css",
+        "match": "(^|[^-\\w\\xA0-\\uFFFF])--(?!\\s)[-_a-z\\xA0-\\uFFFF](?:(?!\\s)[-\\w\\xA0-\\uFFFF])*",
+        "lookbehind": true,
+        "flags": "i"
+      },
+      "operator": {
+        "name": "keyword.operator.css",
+        "match": "(\\s)[+\\-*\\/](?=\\s)",
+        "lookbehind": true
+      },
+      "hexcode": {
+        "name": "constant.numeric.hexcode.css",
+        "match": "\\B#[\\da-f]{3,8}\\b",
+        "alias": "color",
+        "flags": "i"
+      },
+      "color": {
+        "patterns": [
+          {
+            "name": "constant.color.named.css",
+            "match": "(^|[^\\w-])(?:AliceBlue|AntiqueWhite|Aqua|Aquamarine|Azure|Beige|Bisque|Black|BlanchedAlmond|Blue|BlueViolet|Brown|BurlyWood|CadetBlue|Chartreuse|Chocolate|Coral|CornflowerBlue|Cornsilk|Crimson|Cyan|DarkBlue|DarkCyan|DarkGoldenRod|DarkGr[ae]y|DarkGreen|DarkKhaki|DarkMagenta|DarkOliveGreen|DarkOrange|DarkOrchid|DarkRed|DarkSalmon|DarkSeaGreen|DarkSlateBlue|DarkSlateGr[ae]y|DarkTurquoise|DarkViolet|DeepPink|DeepSkyBlue|DimGr[ae]y|DodgerBlue|FireBrick|FloralWhite|ForestGreen|Fuchsia|Gainsboro|GhostWhite|Gold|GoldenRod|Gr[ae]y|Green|GreenYellow|HoneyDew|HotPink|IndianRed|Indigo|Ivory|Khaki|Lavender|LavenderBlush|LawnGreen|LemonChiffon|LightBlue|LightCoral|LightCyan|LightGoldenRodYellow|LightGr[ae]y|LightGreen|LightPink|LightSalmon|LightSeaGreen|LightSkyBlue|LightSlateGr[ae]y|LightSteelBlue|LightYellow|Lime|LimeGreen|Linen|Magenta|Maroon|MediumAquaMarine|MediumBlue|MediumOrchid|MediumPurple|MediumSeaGreen|MediumSlateBlue|MediumSpringGreen|MediumTurquoise|MediumVioletRed|MidnightBlue|MintCream|MistyRose|Moccasin|NavajoWhite|Navy|OldLace|Olive|OliveDrab|Orange|OrangeRed|Orchid|PaleGoldenRod|PaleGreen|PaleTurquoise|PaleVioletRed|PapayaWhip|PeachPuff|Peru|Pink|Plum|PowderBlue|Purple|RebeccaPurple|Red|RosyBrown|RoyalBlue|SaddleBrown|Salmon|SandyBrown|SeaGreen|SeaShell|Sienna|Silver|SkyBlue|SlateBlue|SlateGr[ae]y|Snow|SpringGreen|SteelBlue|Tan|Teal|Thistle|Tomato|Transparent|Turquoise|Violet|Wheat|White|WhiteSmoke|Yellow|YellowGreen)(?![\\w-])",
+            "lookbehind": true,
+            "flags": "i"
+          },
+          {
+            "name": "constant.color.rgb-hsl.css",
+            "begin": "\\b(?:hsl|rgb)\\(",
+            "end": "\\)",
+            "patterns": [
+              {
+                "name": "constant.numeric.unit.css",
+                "match": "(\\b\\d+)(?:%|[a-z]+(?![\\w-]))",
+                "lookbehind": true
+              },
+              {
+                "name": "constant.numeric.css",
+                "match": "(^|[^\\w.-])-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)",
+                "lookbehind": true
+              },
+              {
+                "name": "support.function.name.css",
+                "match": "[\\w-]+(?=\\()"
+              },
+              {
+                "name": "punctuation.definition.color.css",
+                "match": "[(),]"
+              }
+            ],
+            "flags": "i"
+          },
+          {
+            "name": "constant.color.rgb-hsl.css",
+            "begin": "\\b(?:hsl|rgb)a\\(",
+            "end": "\\)",
+            "patterns": [
+              {
+                "name": "constant.numeric.unit.css",
+                "match": "(\\b\\d+)(?:%|[a-z]+(?![\\w-]))",
+                "lookbehind": true
+              },
+              {
+                "name": "constant.numeric.css",
+                "match": "(^|[^\\w.-])-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)",
+                "lookbehind": true
+              },
+              {
+                "name": "support.function.name.css",
+                "match": "[\\w-]+(?=\\()"
+              },
+              {
+                "name": "punctuation.definition.color.css",
+                "match": "[(),]"
+              }
+            ],
+            "flags": "i"
+          }
+        ]
+      },
+      "entity": {
+        "name": "constant.character.entity.css",
+        "match": "\\\\[\\da-f]{1,8}",
+        "flags": "i"
+      },
+      "unit": {
+        "name": "constant.numeric.unit.css",
+        "match": "(\\b\\d+)(?:%|[a-z]+(?![\\w-]))",
+        "lookbehind": true
+      },
+      "number": {
+        "name": "constant.numeric.css",
+        "match": "(^|[^\\w.-])-?(?:\\d+(?:\\.\\d+)?|\\.\\d+)",
+        "lookbehind": true
+      },
+      "comment": {
+        "name": "comment.block.css",
+        "match": "/\\*[\\s\\S]*?\\*/"
+      },
+      "atrule": {
+        "name": "keyword.control.at-rule.css",
+        "begin": "@[\\w-]",
+        "end": "(?:;|(?=\\s*\\{))",
+        "patterns": [
+          {
+            "name": "keyword.control.at-rule.css",
+            "match": "^@[\\w-]+"
+          },
+          {
+            "name": "meta.selector-function-argument.css",
+            "begin": "(\\bselector\\s*\\(\\s*(?![\\s)]))",
+            "end": "(?=\\s*\\))",
+            "patterns": [
+              {
+                "name": "entity.other.attribute-name.selector.css",
+                "match": "(?:[^()\\s]|\\s+(?![\\s)])|\\((?:[^()]|\\([^()]*\\))*\\)+"
+              }
+            ],
+            "lookbehind": true,
+            "alias": "selector"
+          },
+          {
+            "name": "keyword.operator.logical.css",
+            "match": "(^|[^\\w-])(?:and|not|only|or)(?![\\w-])",
+            "lookbehind": true
+          }
+        ]
+      },
+      "url": {
+        "name": "meta.url.css",
+        "begin": "\\burl\\(",
+        "end": "\\)",
+        "patterns": [
+          {
+            "name": "support.function.url.css",
+            "match": "^url"
+          },
+          {
+            "name": "punctuation.definition.url.begin.css",
+            "match": "^\\("
+          },
+          {
+            "name": "punctuation.definition.url.end.css",
+            "match": "\\)$"
+          },
+          {
+            "name": "string.quoted.url.css",
+            "match": "(?:[^\\\\\\r\\n()\"']|\\\\[\\s\\S])*",
+            "alias": "url"
+          }
+        ],
+        "greedy": true
+      },
+    "selector": {
+      "name": "meta.selector.css",
+      "begin": "(^|[{}\\s])[^{}\\s]",
+      "end": "(?=\\s*\\{)",
+      "patterns": [
+        {
+          "name": "entity.other.attribute-name.selector.css",
+          "match": "(?:[^{};\"'\\s]|\\s+(?![\\s{]))*"
+        },
+        {
+          "name": "entity.other.attribute-name.pseudo-element.css",
+          "match": ":(?:after|before|first-letter|first-line|selection)|::[-\\w]+"
+        },
+        {
+          "name": "entity.other.attribute-name.pseudo-class.css",
+          "match": ":[-\\w]+"
+        },
+        {
+          "name": "entity.other.attribute-name.class.css",
+          "match": "\\.[-\\w]+"
+        },
+        {
+          "name": "entity.other.attribute-name.id.css",
+          "match": "#[-\\w]+"
+        },
+        {
+          "name": "meta.attribute-selector.css",
+          "begin": "\\[",
+          "end": "\\]",
+          "patterns": [
+            {
+              "name": "punctuation.definition.attribute-selector.begin.css",
+              "match": "^\\["
+            },
+            {
+              "name": "punctuation.definition.attribute-selector.end.css",
+              "match": "\\]$"
+            },
+            {
+              "name": "keyword.other.case-sensitivity.css",
+              "match": "(\\s)[si]$",
+              "lookbehind": true
+            },
+            {
+              "name": "entity.other.attribute-name.namespace.css",
+              "match": "^\\s*(?:(?!\\s)[-\\*\\w\\xA0-\\uFFFF])*\\|(?!=)",
+              "inside": {
+                "punctuation": "\\|$"
+              }
+            },
+            {
+              "name": "entity.other.attribute-name.css",
+              "match": "^\\s*(?:(?!\\s)[-\\w\\xA0-\\uFFFF])+",
+              "lookbehind": true
+            },
+            {
+              "name": "string.quoted.attribute-value.css",
+              "match": "(?:(?!\\s)[-\\w\\xA0-\\uFFFF])+",
+              "greedy": true
+            },
+            {
+              "name": "entity.other.attribute-value.css",
+              "match": "(=\\s*)(?:(?!\\s)[-\\w\\xA0-\\uFFFF])+(?=\\s*$)",
+              "lookbehind": true
+            },
+            {
+              "name": "keyword.operator.attribute-selector.css",
+              "match": "[|~*^$]?="
+            }
+          ],
+          "greedy": true
+        },
+        {
+          "name": "meta.n-th.css",
+          "begin": "(\\(\\s*)[+-]?\\d*[\\dn](?:\\s*[+-]\\s*\\d+)?(?=\\s*\\))",
+          "end": "(?=\\s*\\))",
+          "patterns": [
+            {
+              "name": "constant.numeric.css",
+              "match": "[\\dn]+"
+            },
+            {
+              "name": "keyword.operator.css",
+              "match": "[+-]"
+            }
+          ],
+          "lookbehind": true
+        },
+        {
+          "name": "meta.n-th.css",
+          "begin": "(\\(\\s*)(?:even|odd)(?=\\s*\\))",
+          "end": "(?=\\s*\\))",
+          "lookbehind": true
+        },
+        {
+          "name": "keyword.operator.combinator.css",
+          "match": ">|\\+|~|\\|\\|"
+        },
+        {
+          "name": "punctuation.definition.selector.css",
+          "match": "[(),]"
+        }
+      ],
+      "lookbehind": true
+    },
+      "string": {
+        "name": "string.quoted.double.css",
+        "match": "\"(?:[^\\\\\\r\\n\"']|\\\\[\\s\\S])*\"",
+        "greedy": true
+      },
+      "property": {
+        "name": "support.type.property-name.css",
+        "match": "(^|[^-\\w\\xA0-\\uFFFF])(?!\\s)[-_a-z\\xA0-\\uFFFF](?:(?!\\s)[-\\w\\xA0-\\uFFFF])*(?=\\s*:)",
+        "lookbehind": true
+      },
+      "important": {
+        "name": "keyword.other.important.css",
+        "match": "!important\\b",
+        "flags": "i"
+      },
+      "function": {
+        "name": "support.function.name.css",
+        "match": "(^|[^-a-z0-9])[-a-z0-9]+(?=\\()",
+        "lookbehind": true,
+        "flags": "i"
+      },
+      "punctuation": {
+        "name": "punctuation.definition.css",
+        "match": "[(){};:,]"
+      }
+    }
+  }
