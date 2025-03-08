@@ -1,5 +1,6 @@
 {
     "scopeName": "source.java",
+    "fileTypes": [".java"],
     "patterns": [
       {
         "include": "#class-name"
