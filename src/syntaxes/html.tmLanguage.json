@@ -1,0 +1,178 @@
+{
+    "scopeName": "source.haml",
+    "patterns": [
+      {
+        "include": "#multiline-comment"
+      },
+      {
+        "include": "#multiline-code"
+      },
+      {
+        "include": "#filter"
+      },
+      {
+        "include": "#markup"
+      },
+      {
+        "include": "#doctype"
+      },
+      {
+        "include": "#tag"
+      },
+      {
+        "include": "#code"
+      },
+      {
+        "include": "#interpolation"
+      },
+      {
+        "include": "#punctuation"
+      }
+    ],
+    "repository": {
+      "multiline-comment": {
+        "name": "comment.block.haml",
+        "begin": "((?:^|\\r?\\n|\\r)([\\t ]*))(?:\\/|-#)",
+        "end": "(?:(?:\\r?\\n|\\r)\\2[\\t ].+)*",
+        "lookbehind": true,
+        "greedy": true
+      },
+      "multiline-code": {
+        "patterns": [
+          {
+            "name": "source.ruby.haml",
+            "begin": "((?:^|\\r?\\n|\\r)([\\t ]*)(?:[~-]|[&!]?=)).*,[\\t ]*",
+            "end": "(?:(?:\\r?\\n|\\r)\\2[\\t ].*,[\\t ]*)*(?:(?:\\r?\\n|\\r)\\2[\\t ].+)",
+            "lookbehind": true,
+            "inside": {
+              "include": "source.ruby"
+            }
+          },
+          {
+            "name": "source.ruby.haml",
+            "begin": "((?:^|\\r?\\n|\\r)([\\t ]*)(?:[~-]|[&!]?=)).*\\|[\\t ]*",
+            "end": "(?:(?:\\r?\\n|\\r)\\2[\\t ].*\\|[\\t ]*)*",
+            "lookbehind": true,
+            "inside": {
+              "include": "source.ruby"
+            }
+          }
+        ]
+      },
+      "filter": {
+        "name": "meta.filter.haml",
+        "begin": "((?:^|\\r?\\n|\\r)([\\t ]*)):([\\w-]+)",
+        "end": "(?:(?:\\r?\\n|\\r)(?:\\2[\\t ].+|\\s*?(?=\\r?\\n|\\r)))+",
+        "lookbehind": true,
+        "patterns": [
+          {
+            "name": "entity.name.tag.filter.haml",
+            "match": "^:[\\w-]+"
+          }
+        ]
+      },
+      "markup": {
+        "name": "text.html.haml",
+        "begin": "((?:^|\\r?\\n|\\r)[\\t ]*)<",
+        "end": ".+",
+        "lookbehind": true,
+        "inside": {
+          "include": "text.html.basic"
+        }
+      },
+      "doctype": {
+        "name": "meta.doctype.haml",
+        "begin": "((?:^|\\r?\\n|\\r)[\\t ]*)!!!",
+        "end": "(?: .+)?",
+        "lookbehind": true
+      },
+      "tag": {
+        "name": "meta.tag.haml",
+        "begin": "((?:^|\\r?\\n|\\r)[\\t ]*)[%.#][\\w\\-#.]*[\\w\\-]",
+        "end": "(?:\\([^)]+\\)|\\{(?:\\{[^}]+\\}|[^{}])+\\}|\\[[^\\]]+\\])*[\\/<>]*",
+        "lookbehind": true,
+        "patterns": [
+          {
+            "name": "meta.tag.attributes.haml",
+            "begin": "(^|[^#])\\{",
+            "end": "\\}",
+            "lookbehind": true,
+            "inside": {
+              "include": "source.ruby"
+            }
+          },
+          {
+            "name": "meta.tag.attributes.haml",
+            "begin": "\\(",
+            "end": "\\)",
+            "patterns": [
+              {
+                "name": "string.quoted.double.haml",
+                "begin": "=(\\s*)\"",
+                "end": "\"",
+                "lookbehind": true
+              },
+              {
+                "name": "entity.other.attribute-name.haml",
+                "match": "[\\w:-]+(?=\\s*!?=|\\s*[,)])"
+              },
+              {
+                "name": "punctuation.definition.tag.haml",
+                "match": "[=(),]"
+              }
+            ]
+          },
+          {
+            "name": "meta.tag.attributes.haml",
+            "begin": "\\[",
+            "end": "\\]",
+            "inside": {
+              "include": "source.ruby"
+            }
+          }
+        ],
+        "inside": {
+          "punctuation": "[<>]"
+        }
+      },
+      "code": {
+        "name": "source.ruby.haml",
+        "begin": "((?:^|\\r?\\n|\\r)[\\t ]*(?:[~-]|[&!]?=))",
+        "end": ".+",
+        "lookbehind": true,
+        "inside": {
+          "include": "source.ruby"
+        }
+      },
+      "interpolation": {
+        "name": "meta.interpolation.haml",
+        "begin": "#\\{",
+        "end": "\\}",
+        "patterns": [
+          {
+            "name": "punctuation.section.interpolation.begin.haml",
+            "match": "^#\\{"
+          },
+          {
+            "name": "punctuation.section.interpolation.end.haml",
+            "match": "\\}$"
+          },
+          {
+            "name": "source.ruby.haml",
+            "begin": "(?<=#\\{)",
+            "end": "(?=\\})",
+            "patterns": [
+              {
+                "include": "source.ruby"
+              }
+            ]
+          }
+        ]
+      },
+      "punctuation": {
+        "name": "punctuation.definition.haml",
+        "match": "((?:^|\\r?\\n|\\r)[\\t ]*)[~=\\-&!]+",
+        "lookbehind": true
+      }
+    }
+  }
