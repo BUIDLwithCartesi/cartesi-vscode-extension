@@ -1,0 +1,192 @@
+{
+    "scopeName": "source.python",
+    "patterns": [
+      {
+        "include": "#comment"
+      },
+      {
+        "include": "#string-interpolation"
+      },
+      {
+        "include": "#triple-quoted-string"
+      },
+      {
+        "include": "#string"
+      },
+      {
+        "include": "#function"
+      },
+      {
+        "include": "#class-name"
+      },
+      {
+        "include": "#decorator"
+      },
+      {
+        "include": "#keyword"
+      },
+      {
+        "include": "#builtin"
+      },
+      {
+        "include": "#boolean"
+      },
+      {
+        "include": "#number"
+      },
+      {
+        "include": "#operator"
+      },
+      {
+        "include": "#punctuation"
+      }
+    ],
+    "repository": {
+      "comment": {
+        "name": "comment.line.number-sign.python",
+        "match": "(^|[^\\\\])#.*",
+        "lookbehind": true,
+        "greedy": true
+      },
+      "string-interpolation": {
+        "name": "string.interpolated.python",
+        "begin": "(?:f|fr|rf)(?:\"\"\"|''')",
+        "end": "(?:\"\"\"|''')",
+        "patterns": [
+          {
+            "include": "#interpolation"
+          },
+          {
+            "name": "string.quoted.double.python",
+            "match": "[\\s\\S]+"
+          }
+        ],
+        "greedy": true
+      },
+      "interpolation": {
+        "name": "meta.interpolation.python",
+        "begin": "((?:^|[^{])(?:\\{\\{)*)\\{(?!\\{)",
+        "end": "\\}",
+        "patterns": [
+          {
+            "name": "punctuation.section.interpolation.begin.python",
+            "match": "^\\{"
+          },
+          {
+            "name": "punctuation.section.interpolation.end.python",
+            "match": "\\}$"
+          },
+          {
+            "name": "meta.format-spec.python",
+            "begin": ":",
+            "end": "(?=\\}$)",
+            "patterns": [
+              {
+                "name": "string.format-spec.python",
+                "match": "[^:(){}]+"
+              }
+            ],
+            "lookbehind": true
+          },
+          {
+            "name": "keyword.operator.conversion.python",
+            "match": "![sra](?=[:}]$)",
+            "alias": "punctuation"
+          },
+          {
+            "include": "$self"
+          }
+        ],
+        "lookbehind": true
+      },
+      "triple-quoted-string": {
+        "name": "string.quoted.triple.python",
+        "begin": "(?:[rub]|br|rb)?(\"\"\"|''')",
+        "end": "\\1",
+        "greedy": true,
+        "alias": "string"
+      },
+      "string": {
+        "name": "string.quoted.single.python",
+        "begin": "(?:[rub]|br|rb)?(\"|')",
+        "end": "\\1",
+        "patterns": [
+          {
+            "name": "constant.character.escape.python",
+            "match": "\\\\."
+          },
+          {
+            "name": "string.quoted.single.python",
+            "match": "(?!\\1)[^\\\\\\r\\n]+"
+          }
+        ],
+        "greedy": true
+      },
+      "function": {
+        "name": "entity.name.function.python",
+        "begin": "((?:^|\\s)def[ \\t]+)",
+        "end": "(?=\\s*\\()",
+        "patterns": [
+          {
+            "name": "entity.name.function.python",
+            "match": "[a-zA-Z_]\\w*"
+          }
+        ],
+        "lookbehind": true
+      },
+      "class-name": {
+        "name": "entity.name.class.python",
+        "begin": "(\\bclass\\s+)",
+        "end": "(?=\\s*\\()",
+        "patterns": [
+          {
+            "name": "entity.name.class.python",
+            "match": "\\w+"
+          }
+        ],
+        "lookbehind": true
+      },
+      "decorator": {
+        "name": "meta.decorator.python",
+        "begin": "(^[\\t ]*)@",
+        "end": "(?=\\s|$)",
+        "patterns": [
+          {
+            "name": "punctuation.definition.decorator.python",
+            "match": "^@"
+          },
+          {
+            "name": "entity.name.function.decorator.python",
+            "match": "\\w+(?:\\.\\w+)*"
+          }
+        ],
+        "lookbehind": true,
+        "alias": ["annotation", "punctuation"]
+      },
+      "keyword": {
+        "name": "keyword.control.python",
+        "match": "\\b(?:_(?=\\s*:)|and|as|assert|async|await|break|case|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|match|nonlocal|not|or|pass|print|raise|return|try|while|with|yield)\\b"
+      },
+      "builtin": {
+        "name": "support.function.builtin.python",
+        "match": "\\b(?:__import__|abs|all|any|apply|ascii|basestring|bin|bool|buffer|bytearray|bytes|callable|chr|classmethod|cmp|coerce|compile|complex|delattr|dict|dir|divmod|enumerate|eval|execfile|file|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|intern|isinstance|issubclass|iter|len|list|locals|long|map|max|memoryview|min|next|object|oct|open|ord|pow|property|range|raw_input|reduce|reload|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|unichr|unicode|vars|xrange|zip)\\b"
+      },
+      "boolean": {
+        "name": "constant.language.boolean.python",
+        "match": "\\b(?:False|None|True)\\b"
+      },
+      "number": {
+        "name": "constant.numeric.python",
+        "match": "\\b0(?:b(?:_?[01])+|o(?:_?[0-7])+|x(?:_?[a-f0-9])+)\b|(?:\\b\\d+(?:_\\d+)*(?:\\.(?:\\d+(?:_\\d+)*)?)?|\\B\\.\\d+(?:_\\d+)*)(?:e[+-]?\\d+(?:_\\d+)*)?j?(?!\\w)",
+        "flags": "i"
+      },
+      "operator": {
+        "name": "keyword.operator.python",
+        "match": "[-+%=]=?|!=|:=|\\*\\*?=?|\\/\\/=?|<[<=>]?|>[=>]?|[&|^~]"
+      },
+      "punctuation": {
+        "name": "punctuation.definition.python",
+        "match": "[{}[\\];(),.:]"
+      }
+    }
+  }
